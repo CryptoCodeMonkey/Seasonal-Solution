@@ -83,8 +83,8 @@ export default function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <Link href="/testimonials" className="text-muted-foreground hover:text-primary">
-                  Testimonials
+                <Link href="/service-areas" className="text-muted-foreground hover:text-primary">
+                  Areas We Serve
                 </Link>
               </li>
               <li>
@@ -95,6 +95,37 @@ export default function SiteFooter() {
               <li>
                 <Link href="/contact" className="text-muted-foreground hover:text-primary">
                   Contact Us
+                </Link>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="mb-4 text-lg font-semibold">Winnipeg Neighborhoods</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/service-areas#river-heights" className="text-muted-foreground hover:text-primary">
+                  River Heights
+                </Link>
+              </li>
+              <li>
+                <Link href="/service-areas#st-vital" className="text-muted-foreground hover:text-primary">
+                  St. Vital
+                </Link>
+              </li>
+              <li>
+                <Link href="/service-areas#transcona" className="text-muted-foreground hover:text-primary">
+                  Transcona
+                </Link>
+              </li>
+              <li>
+                <Link href="/service-areas#st-james" className="text-muted-foreground hover:text-primary">
+                  St. James
+                </Link>
+              </li>
+              <li>
+                <Link href="/service-areas" className="text-muted-foreground hover:text-primary">
+                  View All Areas
                 </Link>
               </li>
             </ul>

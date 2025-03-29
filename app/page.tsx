@@ -302,3 +302,48 @@ export default function Home() {
     </div>
   )
 }
+
+      {/* Schema.org structured data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What areas of Winnipeg do you serve?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We proudly serve all Winnipeg neighborhoods including River Heights, St. Vital, Transcona, St. Boniface, Fort Garry, St. James, Charleswood, and Downtown. We also cover surrounding areas like Headingley, East St. Paul, West St. Paul, Oak Bluff, Stonewall, Selkirk, Oakbank, and Lorette."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What handyman services do you offer in Winnipeg?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Our Winnipeg handyman services include home repairs, furniture assembly, drywall installation and repair, door and window repairs, shelving and cabinet installation, deck repairs and maintenance, painting, and minor home renovations. All of our work is completed by experienced professionals."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you offer landscaping services throughout Winnipeg?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, we provide comprehensive landscaping services across Winnipeg including professional lawn care and maintenance, garden design and installation, tree and shrub planting, sod installation and repairs, mulching and garden bed preparation, and seasonal yard cleanups."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How can I get a quote for handyman or landscaping work in Winnipeg?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Getting a quote is easy! Simply call us at (204) 990-3247 or fill out our contact form online. We offer free quotes for all handyman and landscaping services throughout Winnipeg and the surrounding areas."
+                }
+              }
+            ]
+          })
+        }}
+      />

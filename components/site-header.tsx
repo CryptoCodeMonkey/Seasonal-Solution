@@ -15,9 +15,9 @@ export default function SiteHeader() {
   const routes = [
     { href: "/", label: "Home" },
     { href: "/services", label: "Services" },
+    { href: "/service-areas", label: "Areas We Serve" },
     { href: "/gallery", label: "Our Work" },
     { href: "/about", label: "About Us" },
-    { href: "/blog", label: "Blog" },
     { href: "/contact", label: "Contact" },
   ]
 
@@ -54,11 +54,11 @@ export default function SiteHeader() {
 
         <div className="hidden items-center gap-4 md:flex">
           <Link
-            href="tel:+12045551234"
+            href="tel:+12049903247"
             className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"
           >
             <Phone className="h-4 w-4" />
-            <span>(204) 555-1234</span>
+            <span>(204) 990-3247</span>
           </Link>
           <Button asChild>
             <Link href="/contact">Get a Quote</Link>
@@ -101,20 +101,20 @@ export default function SiteHeader() {
 
               <div className="flex flex-col gap-4 pt-6">
                 <Link
-                  href="tel:+12045551234"
+                  href="tel:+12049903247"
                   className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <Phone className="h-4 w-4" />
-                  <span>(204) 555-1234</span>
+                  <span>(204) 990-3247</span>
                 </Link>
                 <Link
-                  href="mailto:info@seasonalsolutions.ca"
+                  href="mailto:seasonalsolutionswinnipeg@gmail.com"
                   className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <Mail className="h-4 w-4" />
-                  <span>info@seasonalsolutions.ca</span>
+                  <span>seasonalsolutionswinnipeg@gmail.com</span>
                 </Link>
                 <Button className="mt-2" asChild onClick={() => setIsMenuOpen(false)}>
                   <Link href="/contact">Get a Quote</Link>
