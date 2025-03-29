@@ -1,10 +1,17 @@
-
 import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
+import dynamic from "next/dynamic";
 
-import { Button } from "@/components/ui/button"
+const Button = dynamic(
+  () => import("@/components/ui/button").then((mod) => ({ default: mod.Button })),
+  {
+    loading: () => <div className="h-6 w-full animate-pulse rounded-lg bg-muted"></div>,
+    ssr: true,
+  }
+);
+
 
 export const metadata: Metadata = {
   title: "Project Gallery - Seasonal Solutions",

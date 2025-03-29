@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
+import { headers } from "next/headers"
 
 import SiteHeader from "@/components/site-header"
 import SiteFooter from "@/components/site-footer"

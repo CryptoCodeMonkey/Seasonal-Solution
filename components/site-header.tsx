@@ -29,7 +29,7 @@ export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
       <div className="container flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2" prefetch>
           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary">
             <div className="flex">
               <Leaf className="h-5 w-5 text-primary-foreground" />
@@ -47,6 +47,7 @@ export default function SiteHeader() {
               className={`text-sm font-medium transition-colors hover:text-primary ${
                 isActive(route.href) ? "text-primary" : "text-muted-foreground"
               }`}
+              prefetch
             >
               {route.label}
             </Link>
@@ -57,12 +58,13 @@ export default function SiteHeader() {
           <Link
             href="tel:+12049903247"
             className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"
+            prefetch
           >
             <Phone className="h-4 w-4" />
             <span>(204) 990-3247</span>
           </Link>
           <Button asChild>
-            <Link href="/contact">Get a Quote</Link>
+            <Link href="/contact" prefetch>Get a Quote</Link>
           </Button>
         </div>
 
@@ -75,7 +77,7 @@ export default function SiteHeader() {
           </SheetTrigger>
           <SheetContent side="right" className="w-[300px] sm:w-[400px]">
             <div className="flex flex-col gap-6 py-6">
-              <Link href="/" className="flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
+              <Link href="/" className="flex items-center gap-2" onClick={() => setIsMenuOpen(false)} prefetch>
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary">
                   <div className="flex">
                     <Leaf className="h-5 w-5 text-primary-foreground" />
@@ -94,6 +96,7 @@ export default function SiteHeader() {
                       isActive(route.href) ? "text-primary" : "text-muted-foreground"
                     }`}
                     onClick={() => setIsMenuOpen(false)}
+                    prefetch
                   >
                     {route.label}
                   </Link>
@@ -105,6 +108,7 @@ export default function SiteHeader() {
                   href="tel:+12049903247"
                   className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"
                   onClick={() => setIsMenuOpen(false)}
+                  prefetch
                 >
                   <Phone className="h-4 w-4" />
                   <span>(204) 990-3247</span>
@@ -113,12 +117,13 @@ export default function SiteHeader() {
                   href="mailto:seasonalsolutionswinnipeg@gmail.com"
                   className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"
                   onClick={() => setIsMenuOpen(false)}
+                  prefetch
                 >
                   <Mail className="h-4 w-4" />
                   <span>seasonalsolutionswinnipeg@gmail.com</span>
                 </Link>
                 <Button className="mt-2" asChild onClick={() => setIsMenuOpen(false)}>
-                  <Link href="/contact">Get a Quote</Link>
+                  <Link href="/contact" prefetch>Get a Quote</Link>
                 </Button>
               </div>
             </div>
@@ -128,4 +133,3 @@ export default function SiteHeader() {
     </header>
   )
 }
-
