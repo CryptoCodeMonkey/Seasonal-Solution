@@ -1,11 +1,9 @@
-import type React from "react"
-import type { Metadata } from "next"
+import "@/app/globals.css"
 import { Inter } from "next/font/google"
-import "./globals.css"
-import { headers } from "next/headers"
+import { Metadata } from "next"
 
-import SiteHeader from "@/components/site-header"
-import SiteFooter from "@/components/site-footer"
+import { SiteFooter } from "@/components/site-footer"
+import { SiteHeader } from "@/components/site-header"
 import { ThemeProvider } from "@/components/theme-provider"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -16,48 +14,36 @@ export const metadata: Metadata = {
   keywords:
     "handyman winnipeg, landscaping winnipeg, winnipeg lawn care, winnipeg snow removal, manitoba handyman, river heights landscaping, st vital home repairs, transcona lawn service, winnipeg renovation, painting winnipeg, seasonal maintenance winnipeg, property maintenance manitoba, cole doerksen handyman, winnipeg deck repair, winnipeg fence installation, landscaper near me winnipeg",
   metadataBase: new URL('https://www.seasonalsolutionswinnipeg.com'),
-  authors: [{ name: 'Cole Doerksen', url: 'https://www.seasonalsolutionswinnipeg.com' }],
-  creator: 'Cole Doerksen - Seasonal Solutions',
-  publisher: 'Seasonal Solutions Winnipeg',
-  formatDetection: {
-    email: true,
-    address: true,
-    telephone: true,
-  },
   openGraph: {
     type: 'website',
     locale: 'en_CA',
     url: 'https://www.seasonalsolutionswinnipeg.com',
-    title: 'Seasonal Solutions | Winnipeg Handyman & Landscaping Services',
-    description: 'Professional handyman and landscaping services in Winnipeg, Manitoba. Lawn care, home repairs, renovations and complete landscape design by Cole Doerksen.',
-    siteName: 'Seasonal Solutions Winnipeg',
-    images: [
-      {
-        url: 'https://www.seasonalsolutionswinnipeg.com/images/hero-landscaping.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Seasonal Solutions Winnipeg Handyman and Landscaping Services'
-      }
-    ]
+    title: 'Seasonal Solutions | Professional Landscaping & Handyman Services in Winnipeg',
+    description: 'Trusted landscaping and handyman services in Winnipeg. Quality work, affordable rates, and excellent customer service.',
+    siteName: 'Seasonal Solutions',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Seasonal Solutions | Professional Landscaping & Handyman Services in Winnipeg',
+    description: 'Trusted landscaping and handyman services in Winnipeg.',
+  },
+  authors: [
+    {
+      name: 'Cole Doerksen',
+      url: 'https://www.seasonalsolutionswinnipeg.com',
+    },
+  ],
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
   },
-  category: 'home services',
 }
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>

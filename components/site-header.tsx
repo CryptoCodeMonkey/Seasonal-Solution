@@ -37,7 +37,7 @@ export default function SiteHeader() {
               <Wrench className="h-6 w-6 text-primary-foreground" />
             </div>
           </div>
-          <span className="text-xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+          <span className="text-xl font-bold tracking-tight bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
             Seasonal Solutions
           </span>
         </Link>
@@ -49,8 +49,8 @@ export default function SiteHeader() {
                 key={route.href}
                 href={route.href}
                 className={`px-3 py-2 text-sm font-medium rounded-md transition-colors hover:bg-muted hover:text-primary ${
-                  isActive(route.href) 
-                    ? "text-primary bg-primary/10 font-semibold" 
+                  isActive(route.href)
+                    ? "text-primary bg-primary/10 font-semibold"
                     : "text-muted-foreground"
                 }`}
                 prefetch
@@ -69,9 +69,9 @@ export default function SiteHeader() {
               <Phone className="h-4 w-4" />
               <span>(204) 990-3247</span>
             </Link>
-            
+
             <ThemeToggle />
-            
+
             <Button asChild size="sm" className="shadow-sm">
               <Link href="/contact" prefetch>Get a Quote</Link>
             </Button>
@@ -94,7 +94,7 @@ export default function SiteHeader() {
                     <Wrench className="h-6 w-6 text-primary-foreground" />
                   </div>
                 </div>
-                <span className="text-xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+                <span className="text-xl font-bold tracking-tight bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
                   Seasonal Solutions
                 </span>
               </Link>
@@ -107,8 +107,8 @@ export default function SiteHeader() {
                     key={route.href}
                     href={route.href}
                     className={`py-3 px-4 text-sm font-medium rounded-lg transition-colors hover:bg-muted ${
-                      isActive(route.href) 
-                        ? "text-primary bg-primary/10 font-semibold" 
+                      isActive(route.href)
+                        ? "text-primary bg-primary/10 font-semibold"
                         : "text-muted-foreground"
                     }`}
                     onClick={() => setIsMenuOpen(false)}
