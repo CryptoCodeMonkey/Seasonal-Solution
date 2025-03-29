@@ -6,14 +6,14 @@ import Link from "next/link"
 interface ServiceCardProps {
   title: string
   description: string
-  imageUrl: string
-  linkUrl: string
+  imageUrl?: string
+  linkUrl?: string
 }
 
 export function ServiceCard({ title, description, imageUrl, linkUrl }: ServiceCardProps) {
-  return (
-    <div className="group relative">
-      <Card className="overflow-hidden transition-all duration-200 hover:shadow-md">
+  const cardContent = (
+    <Card className="h-full overflow-hidden transition-all duration-200 hover:shadow-md">
+      {imageUrl && (
         <div className="relative h-48 w-full overflow-hidden">
           <Image
             src={imageUrl}
@@ -22,17 +22,26 @@ export function ServiceCard({ title, description, imageUrl, linkUrl }: ServiceCa
             className="object-cover transition-transform duration-300 group-hover:scale-105"
           />
         </div>
-        <CardContent className="p-6">
-          <h3 className="mb-2 text-xl font-semibold">{title}</h3>
-          <p className="mb-4 text-muted-foreground">{description}</p>
-          <Link 
-            href={linkUrl} 
-            className="inline-flex items-center text-primary hover:underline"
-          >
+      )}
+      <CardContent className="p-6">
+        <h3 className="mb-2 text-xl font-semibold">{title}</h3>
+        <p className="mb-4 text-muted-foreground">{description}</p>
+        {linkUrl && (
+          <span className="inline-flex items-center text-primary hover:underline">
             Learn more
-          </Link>
-        </CardContent>
-      </Card>
-    </div>
-  )
+          </span>
+        )}
+      </CardContent>
+    </Card>
+  );
+
+  if (linkUrl) {
+    return (
+      <Link href={linkUrl} className="group block h-full">
+        {cardContent}
+      </Link>
+    );
+  }
+
+  return <div className="h-full">{cardContent}</div>;
 }
