@@ -16,7 +16,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import TestimonialCarousel from "@/components/testimonial-carousel"
-import ServiceCard from "@/components/service-card"
+import { ServiceCard } from "@/components/service-card"
 
 export default function Home() {
   return (
