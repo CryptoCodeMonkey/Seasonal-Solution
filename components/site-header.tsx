@@ -14,7 +14,6 @@ export default function SiteHeader() {
 
   const routes = [
     { href: "/", label: "Home" },
-    { href: "/convert", label: "Converter" },
     { href: "/services", label: "Services" },
     { href: "/winnipeg-services", label: "Winnipeg Services" },
     { href: "/service-areas", label: "Areas We Serve" },
