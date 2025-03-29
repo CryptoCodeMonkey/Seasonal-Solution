@@ -4,9 +4,13 @@ import { MapPin, ArrowRight, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export const metadata = {
-  title: "Winnipeg Service Areas | Seasonal Solutions Handyman & Landscaping",
+  title: "Winnipeg Handyman & Landscaping Services | All Neighborhoods | Seasonal Solutions",
   description: 
-    "Seasonal Solutions proudly serves all Winnipeg neighborhoods including River Heights, St. Vital, Transcona, St. Boniface, and surrounding areas. Local handyman and landscaping experts for every Winnipeg community.",
+    "Trusted Winnipeg handyman and landscaping experts serving River Heights, St. Vital, Transcona, St. James, Fort Garry and all Manitoba communities. Professional lawn care, home repairs, and property maintenance by Cole Doerksen.",
+  keywords: "winnipeg handyman, winnipeg landscaping, manitoba lawn care, property maintenance winnipeg, home repairs winnipeg, river heights handyman, st vital landscaper, transcona yard work, seasonal solutions winnipeg, cole doerksen handyman",
+  alternates: {
+    canonical: "https://www.seasonalsolutionswinnipeg.com/service-areas",
+  }
 }
 
 export default function ServiceAreasPage() {

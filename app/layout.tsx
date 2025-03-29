@@ -10,12 +10,47 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Seasonal Solutions | Handyman & Landscaping Services in Winnipeg MB",
+  title: "Seasonal Solutions | Professional Handyman & Landscaping Services in Winnipeg MB",
   description:
-    "Trusted local handyman and landscaping services throughout Winnipeg, Manitoba. Professional lawn care, snow removal, home repairs, and complete landscape transformations with free quotes. Serving River Heights, St. Vital, Transcona and all Winnipeg neighborhoods.",
+    "Trusted local handyman and landscaping services throughout Winnipeg, Manitoba. Professional lawn care, snow removal, home repairs, and complete landscape transformations with free quotes by Cole Doerksen. Serving River Heights, St. Vital, Transcona and all Winnipeg neighborhoods.",
   keywords:
-    "handyman winnipeg, landscaping winnipeg, winnipeg lawn care, winnipeg snow removal, manitoba handyman, river heights landscaping, st vital home repairs, transcona lawn service, winnipeg renovation, painting winnipeg, seasonal maintenance winnipeg, property maintenance manitoba",
-    generator: 'v0.dev'
+    "handyman winnipeg, landscaping winnipeg, winnipeg lawn care, winnipeg snow removal, manitoba handyman, river heights landscaping, st vital home repairs, transcona lawn service, winnipeg renovation, painting winnipeg, seasonal maintenance winnipeg, property maintenance manitoba, cole doerksen handyman, winnipeg deck repair, winnipeg fence installation, landscaper near me winnipeg",
+  metadataBase: new URL('https://www.seasonalsolutionswinnipeg.com'),
+  authors: [{ name: 'Cole Doerksen', url: 'https://www.seasonalsolutionswinnipeg.com' }],
+  creator: 'Cole Doerksen - Seasonal Solutions',
+  publisher: 'Seasonal Solutions Winnipeg',
+  formatDetection: {
+    email: true,
+    address: true,
+    telephone: true,
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_CA',
+    url: 'https://www.seasonalsolutionswinnipeg.com',
+    title: 'Seasonal Solutions | Winnipeg Handyman & Landscaping Services',
+    description: 'Professional handyman and landscaping services in Winnipeg, Manitoba. Lawn care, home repairs, renovations and complete landscape design by Cole Doerksen.',
+    siteName: 'Seasonal Solutions Winnipeg',
+    images: [
+      {
+        url: 'https://www.seasonalsolutionswinnipeg.com/images/hero-landscaping.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Seasonal Solutions Winnipeg Handyman and Landscaping Services'
+      }
+    ]
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  category: 'home services',
 }
 
 export default function RootLayout({

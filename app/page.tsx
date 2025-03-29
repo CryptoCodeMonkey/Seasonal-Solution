@@ -307,43 +307,192 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "What areas of Winnipeg do you serve?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "We proudly serve all Winnipeg neighborhoods including River Heights, St. Vital, Transcona, St. Boniface, Fort Garry, St. James, Charleswood, and Downtown. We also cover surrounding areas like Headingley, East St. Paul, West St. Paul, Oak Bluff, Stonewall, Selkirk, Oakbank, and Lorette."
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What areas of Winnipeg do you serve?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We proudly serve all Winnipeg neighborhoods including River Heights, St. Vital, Transcona, St. Boniface, Fort Garry, St. James, Charleswood, and Downtown. We also cover surrounding areas like Headingley, East St. Paul, West St. Paul, Oak Bluff, Stonewall, Selkirk, Oakbank, and Lorette."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What handyman services do you offer in Winnipeg?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our Winnipeg handyman services include home repairs, furniture assembly, drywall installation and repair, door and window repairs, shelving and cabinet installation, deck repairs and maintenance, painting, and minor home renovations. All of our work is completed by experienced professionals."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Do you offer landscaping services throughout Winnipeg?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, we provide comprehensive landscaping services across Winnipeg including professional lawn care and maintenance, garden design and installation, tree and shrub planting, sod installation and repairs, mulching and garden bed preparation, and seasonal yard cleanups."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How can I get a quote for handyman or landscaping work in Winnipeg?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Getting a quote is easy! Simply call Cole Doerksen at (204) 990-3247 or fill out our contact form online. We offer free quotes for all handyman and landscaping services throughout Winnipeg and the surrounding areas."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What makes Seasonal Solutions different from other Winnipeg handyman services?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Seasonal Solutions is owned and operated by Cole Doerksen, a Winnipeg local who takes personal pride in every project. We offer comprehensive services for all seasons, transparent pricing, and a commitment to quality workmanship that sets us apart from other handyman and landscaping companies in Winnipeg."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Do you provide snow removal services in Winnipeg during winter?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, we offer reliable snow removal and winter maintenance services for residential and commercial properties throughout Winnipeg. Our services include driveway clearing, sidewalk shoveling, ice management, and seasonal contracts to keep your property safe and accessible all winter."
+                  }
                 }
+              ]
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "HomeAndConstructionBusiness",
+              "name": "Seasonal Solutions",
+              "image": "https://www.seasonalsolutionswinnipeg.com/images/logo.jpg",
+              "url": "https://www.seasonalsolutionswinnipeg.com",
+              "telephone": "+12049903247",
+              "email": "seasonalsolutionswinnipeg@gmail.com",
+              "priceRange": "$$",
+              "description": "Professional handyman and landscaping services in Winnipeg. From home repairs to complete landscape transformations, we provide quality solutions for all seasons.",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Winnipeg",
+                "addressRegion": "MB",
+                "postalCode": "R3T",
+                "addressCountry": "CA"
               },
-              {
-                "@type": "Question",
-                "name": "What handyman services do you offer in Winnipeg?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Our Winnipeg handyman services include home repairs, furniture assembly, drywall installation and repair, door and window repairs, shelving and cabinet installation, deck repairs and maintenance, painting, and minor home renovations. All of our work is completed by experienced professionals."
-                }
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 49.8951,
+                "longitude": -97.1384
               },
-              {
-                "@type": "Question",
-                "name": "Do you offer landscaping services throughout Winnipeg?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes, we provide comprehensive landscaping services across Winnipeg including professional lawn care and maintenance, garden design and installation, tree and shrub planting, sod installation and repairs, mulching and garden bed preparation, and seasonal yard cleanups."
-                }
+              "areaServed": {
+                "@type": "GeoCircle",
+                "geoMidpoint": {
+                  "@type": "GeoCoordinates",
+                  "latitude": 49.8951,
+                  "longitude": -97.1384
+                },
+                "geoRadius": "30000"
               },
-              {
-                "@type": "Question",
-                "name": "How can I get a quote for handyman or landscaping work in Winnipeg?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Getting a quote is easy! Simply call us at (204) 990-3247 or fill out our contact form online. We offer free quotes for all handyman and landscaping services throughout Winnipeg and the surrounding areas."
+              "sameAs": [
+                "https://www.facebook.com/seasonalsolutionswinnipeg",
+                "https://www.instagram.com/seasonalsolutionswinnipeg"
+              ],
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                  "opens": "08:00",
+                  "closes": "18:00"
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": "Saturday",
+                  "opens": "09:00",
+                  "closes": "16:00"
                 }
+              ],
+              "founder": {
+                "@type": "Person",
+                "name": "Cole Doerksen"
+              },
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Handyman and Landscaping Services",
+                "itemListElement": [
+                  {
+                    "@type": "OfferCatalog",
+                    "name": "Winnipeg Handyman Services",
+                    "itemListElement": [
+                      {
+                        "@type": "Offer",
+                        "itemOffered": {
+                          "@type": "Service",
+                          "name": "Winnipeg Home Repairs",
+                          "description": "Professional home repairs throughout Winnipeg"
+                        }
+                      },
+                      {
+                        "@type": "Offer",
+                        "itemOffered": {
+                          "@type": "Service",
+                          "name": "Winnipeg Painting Services",
+                          "description": "Interior and exterior painting in Winnipeg"
+                        }
+                      },
+                      {
+                        "@type": "Offer",
+                        "itemOffered": {
+                          "@type": "Service",
+                          "name": "Winnipeg Deck & Fence Repairs",
+                          "description": "Quality deck and fence repairs in Winnipeg"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "OfferCatalog",
+                    "name": "Winnipeg Landscaping Services",
+                    "itemListElement": [
+                      {
+                        "@type": "Offer",
+                        "itemOffered": {
+                          "@type": "Service",
+                          "name": "Winnipeg Lawn Care",
+                          "description": "Professional lawn maintenance in Winnipeg"
+                        }
+                      },
+                      {
+                        "@type": "Offer",
+                        "itemOffered": {
+                          "@type": "Service",
+                          "name": "Winnipeg Garden Design",
+                          "description": "Beautiful garden designs for Winnipeg homes"
+                        }
+                      },
+                      {
+                        "@type": "Offer",
+                        "itemOffered": {
+                          "@type": "Service",
+                          "name": "Winnipeg Snow Removal",
+                          "description": "Reliable snow removal services in Winnipeg"
+                        }
+                      }
+                    ]
+                  }
+                ]
               }
-            ]
-          })
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Seasonal Solutions Winnipeg",
+              "url": "https://www.seasonalsolutionswinnipeg.com",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://www.seasonalsolutionswinnipeg.com/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            }
+          ])
         }}
       />
