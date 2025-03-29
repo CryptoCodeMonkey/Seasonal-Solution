@@ -2,41 +2,17 @@ import "@/app/globals.css"
 import { Inter } from "next/font/google"
 import { Metadata } from "next"
 
-import { SiteFooter } from "@/components/site-footer"
-import { SiteHeader } from "@/components/site-header"
 import { ThemeProvider } from "@/components/theme-provider"
+import { SiteHeader } from "@/components/site-header"
+import { SiteFooter } from "@/components/site-footer"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Seasonal Solutions | Professional Landscaping & Handyman Services in Winnipeg",
   description: "Trusted landscaping and handyman services in Winnipeg. Quality work, affordable rates, and excellent customer service by Cole Doerksen.",
-  keywords:
-    "handyman winnipeg, landscaping winnipeg, winnipeg lawn care, winnipeg snow removal, manitoba handyman, river heights landscaping, st vital home repairs, transcona lawn service, winnipeg renovation, painting winnipeg, seasonal maintenance winnipeg, property maintenance manitoba, cole doerksen handyman, winnipeg deck repair, winnipeg fence installation, landscaper near me winnipeg",
+  keywords: "handyman winnipeg, landscaping winnipeg, winnipeg lawn care, winnipeg snow removal, manitoba handyman, river heights landscaping, st vital home repairs, transcona lawn service",
   metadataBase: new URL('https://www.seasonalsolutionswinnipeg.com'),
-  openGraph: {
-    type: 'website',
-    locale: 'en_CA',
-    url: 'https://www.seasonalsolutionswinnipeg.com',
-    title: 'Seasonal Solutions | Professional Landscaping & Handyman Services in Winnipeg',
-    description: 'Trusted landscaping and handyman services in Winnipeg. Quality work, affordable rates, and excellent customer service.',
-    siteName: 'Seasonal Solutions',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Seasonal Solutions | Professional Landscaping & Handyman Services in Winnipeg',
-    description: 'Trusted landscaping and handyman services in Winnipeg.',
-  },
-  authors: [
-    {
-      name: 'Cole Doerksen',
-      url: 'https://www.seasonalsolutionswinnipeg.com',
-    },
-  ],
-  robots: {
-    index: true,
-    follow: true,
-  },
 }
 
 export default function RootLayout({
