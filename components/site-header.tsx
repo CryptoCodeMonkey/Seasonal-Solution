@@ -7,6 +7,7 @@ import { Menu, Phone, Mail, Leaf, Wrench } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { ThemeToggle } from "@/components/theme-toggle" // Added import for ThemeToggle
 
 export default function SiteHeader() {
   const pathname = usePathname()
@@ -53,6 +54,9 @@ export default function SiteHeader() {
             </Link>
           ))}
         </nav>
+        <div className="ml-auto hidden md:flex"> {/* Added div for theme toggle */}
+          <ThemeToggle /> {/* Added ThemeToggle component */}
+        </div>
 
         <div className="hidden items-center gap-4 md:flex">
           <Link
@@ -102,6 +106,10 @@ export default function SiteHeader() {
                   </Link>
                 ))}
               </nav>
+              <div className="mt-4 flex items-center p-2"> {/* Added div for mobile theme toggle */}
+                <span className="mr-2 text-sm font-medium">Theme:</span>
+                <ThemeToggle /> {/* Added ThemeToggle component */}
+              </div>
 
               <div className="flex flex-col gap-4 pt-6">
                 <Link
