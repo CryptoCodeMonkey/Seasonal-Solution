@@ -11,9 +11,8 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Seasonal Solutions | Professional Handyman & Landscaping Services in Winnipeg MB",
-  description:
-    "Trusted local handyman and landscaping services throughout Winnipeg, Manitoba. Professional lawn care, snow removal, home repairs, and complete landscape transformations with free quotes by Cole Doerksen. Serving River Heights, St. Vital, Transcona and all Winnipeg neighborhoods.",
+  title: "Seasonal Solutions | Professional Landscaping & Handyman Services in Winnipeg",
+  description: "Trusted landscaping and handyman services in Winnipeg. Quality work, affordable rates, and excellent customer service by Cole Doerksen.",
   keywords:
     "handyman winnipeg, landscaping winnipeg, winnipeg lawn care, winnipeg snow removal, manitoba handyman, river heights landscaping, st vital home repairs, transcona lawn service, winnipeg renovation, painting winnipeg, seasonal maintenance winnipeg, property maintenance manitoba, cole doerksen handyman, winnipeg deck repair, winnipeg fence installation, landscaper near me winnipeg",
   metadataBase: new URL('https://www.seasonalsolutionswinnipeg.com'),
@@ -60,9 +59,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <div className="relative flex min-h-screen flex-col">
             <SiteHeader />
             <main className="flex-1">{children}</main>
@@ -140,7 +139,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-
-
-import './globals.css'
