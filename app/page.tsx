@@ -25,29 +25,24 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative">
         <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/hero-landscaping.jpg"
-            alt="Seasonal Solutions - Professional Handyman and Landscaping Services in Winnipeg"
-            fill
-            className="object-cover brightness-[0.7]"
-            priority
-          />
+          <div className="relative h-full w-full bg-gradient-to-r from-primary/10 to-primary/5">
+            <div className="absolute inset-0 bg-slate-900/70" />
+          </div>
         </div>
-        <div className="container relative z-10 mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-32">
+        <div className="container relative z-10 mx-auto px-4 py-32 sm:px-6 sm:py-40 lg:px-8 lg:py-56">
           <div className="max-w-3xl">
-            <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-              Your Trusted Handyman & Landscaping Experts in Winnipeg
+            <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+              Office Document to Markdown Converter
             </h1>
-            <p className="mb-8 text-xl text-white/90">
-              Professional, reliable, and affordable services for all seasons. From home repairs to complete landscape
-              transformations.
+            <p className="mb-10 text-xl text-white/90">
+              Convert your Word, PowerPoint, Excel, PDF, and other files to clean, portable Markdown format in seconds.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button size="lg" asChild>
-                <Link href="/contact">Get a Free Quote</Link>
+                <Link href="/convert">Convert Files Now</Link>
               </Button>
               <Button size="lg" variant="outline" className="bg-white/10 text-white hover:bg-white/20" asChild>
-                <Link href="/services">Our Services</Link>
+                <Link href="/about">Learn More</Link>
               </Button>
             </div>
           </div>
