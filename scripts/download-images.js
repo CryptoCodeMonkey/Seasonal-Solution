@@ -16,7 +16,7 @@ const imageUrls = [
     description: 'Handyman working with tools'
   },
   {
-    url: 'https://images.unsplash.com/photo-1598887142487-3c854d2171c7',
+    url: 'https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5',
     filename: 'lawn-mowing.jpg',
     description: 'Professional lawn mowing service'
   },

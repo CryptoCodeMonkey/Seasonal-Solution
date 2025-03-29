@@ -1,33 +1,38 @@
 
-import React from 'react';
-import { Card, CardContent } from "@/components/ui/card";
-import Link from "next/link";
+import { Card, CardContent } from "@/components/ui/card"
+import Image from "next/image"
+import Link from "next/link"
 
 interface ServiceCardProps {
-  title: string;
-  description: string;
-  link?: string;
-  icon?: React.ReactNode;
+  title: string
+  description: string
+  imageUrl: string
+  linkUrl: string
 }
 
-export function ServiceCard({ title, description, link, icon }: ServiceCardProps) {
-  const content = (
-    <Card className="h-full">
-      <CardContent className="flex flex-col items-center justify-center h-full p-6">
-        {icon && <div className="mb-4 text-4xl">{icon}</div>}
-        <h3 className="text-xl font-bold mb-2">{title}</h3>
-        <p className="text-center text-gray-600 dark:text-gray-400">{description}</p>
-      </CardContent>
-    </Card>
-  );
-
-  if (link) {
-    return (
-      <Link href={link} className="block h-full transition-transform hover:scale-105">
-        {content}
-      </Link>
-    );
-  }
-
-  return content;
+export function ServiceCard({ title, description, imageUrl, linkUrl }: ServiceCardProps) {
+  return (
+    <div className="group relative">
+      <Card className="overflow-hidden transition-all duration-200 hover:shadow-md">
+        <div className="relative h-48 w-full overflow-hidden">
+          <Image
+            src={imageUrl}
+            alt={title}
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+        <CardContent className="p-6">
+          <h3 className="mb-2 text-xl font-semibold">{title}</h3>
+          <p className="mb-4 text-muted-foreground">{description}</p>
+          <Link 
+            href={linkUrl} 
+            className="inline-flex items-center text-primary hover:underline"
+          >
+            Learn more
+          </Link>
+        </CardContent>
+      </Card>
+    </div>
+  )
 }
