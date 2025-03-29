@@ -27,7 +27,7 @@ export default function GalleryPage() {
       category: "landscaping",
       location: "River Heights, Winnipeg",
       description: "Complete backyard redesign with new patio, garden beds, and custom pergola.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/images/landscaping1.jpg",
     },
     {
       id: 2,
@@ -35,7 +35,7 @@ export default function GalleryPage() {
       category: "renovation",
       location: "St. Vital, Winnipeg",
       description: "Modern kitchen renovation with custom cabinets, quartz countertops, and new appliances.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/images/renovation.jpg",
     },
     {
       id: 3,
@@ -43,7 +43,7 @@ export default function GalleryPage() {
       category: "painting",
       location: "Transcona, Winnipeg",
       description: "Complete exterior painting with color consultation and premium weather-resistant paint.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/images/painting.jpg",
     },
     {
       id: 4,
@@ -51,7 +51,7 @@ export default function GalleryPage() {
       category: "handyman",
       location: "St. James, Winnipeg",
       description: "Custom cedar deck with built-in seating and pergola for shade.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/images/deck.jpg",
     },
     {
       id: 5,
@@ -59,7 +59,7 @@ export default function GalleryPage() {
       category: "landscaping",
       location: "Fort Garry, Winnipeg",
       description: "Front yard makeover with new walkway, garden beds, and decorative stone features.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/images/landscaping2.jpg",
     },
     {
       id: 6,
@@ -67,7 +67,7 @@ export default function GalleryPage() {
       category: "renovation",
       location: "St. Boniface, Winnipeg",
       description: "Complete bathroom renovation with custom tile work, new fixtures, and modern vanity.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/images/renovation.jpg",
     },
     {
       id: 7,
@@ -75,7 +75,7 @@ export default function GalleryPage() {
       category: "painting",
       location: "Charleswood, Winnipeg",
       description: "Full interior painting with custom accent walls and trim work.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/images/painting.jpg",
     },
     {
       id: 8,
@@ -83,7 +83,7 @@ export default function GalleryPage() {
       category: "handyman",
       location: "East St. Paul, Winnipeg",
       description: "Custom privacy fence installation with decorative post caps and gate.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/images/handyman1.jpg",
     },
     {
       id: 9,
@@ -91,7 +91,7 @@ export default function GalleryPage() {
       category: "landscaping",
       location: "West St. Paul, Winnipeg",
       description: "Perennial garden design with native plants, decorative stones, and pathway.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/images/landscaping2.jpg",
     },
   ]
 

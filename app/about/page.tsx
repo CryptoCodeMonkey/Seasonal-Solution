@@ -40,19 +40,19 @@ export default function AboutPage() {
     {
       name: "John Smith",
       role: "Founder & Lead Contractor",
-      image: "/placeholder.svg?height=400&width=400",
+      image: "/images/person1.jpg",
       bio: "With over 15 years of experience in construction and landscaping, John founded Seasonal Solutions to provide quality services to homeowners in Winnipeg.",
     },
     {
       name: "Sarah Johnson",
       role: "Landscape Designer",
-      image: "/placeholder.svg?height=400&width=400",
+      image: "/images/person2.jpg",
       bio: "Sarah brings creativity and expertise to our landscaping projects, with a degree in Landscape Architecture and a passion for sustainable design.",
     },
     {
       name: "Mike Williams",
       role: "Master Carpenter",
-      image: "/placeholder.svg?height=400&width=400",
+      image: "/images/person3.jpg",
       bio: "Mike's attention to detail and craftsmanship ensure that all of our carpentry and renovation projects are completed to the highest standards.",
     },
   ]
@@ -86,7 +86,7 @@ export default function AboutPage() {
             </div>
             <div className="relative h-[300px] overflow-hidden rounded-lg sm:h-[400px] lg:h-full">
               <Image
-                src="/placeholder.svg?height=600&width=800"
+                src="/images/team.jpg"
                 alt="Seasonal Solutions Team"
                 fill
                 className="object-cover"

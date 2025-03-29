@@ -11,6 +11,7 @@ import {
   PenToolIcon as Tool,
   Leaf,
   Paintbrush,
+  Home,
 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -25,7 +26,7 @@ export default function Home() {
       <section className="relative">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/placeholder.svg?height=800&width=1920"
+            src="/images/hero.jpg"
             alt="Seasonal Solutions - Professional Handyman and Landscaping Services in Winnipeg"
             fill
             className="object-cover brightness-[0.7]"

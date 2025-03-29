@@ -26,7 +26,7 @@ export default function ServicesPage() {
         "Mulching and decorative stone installation",
         "Irrigation system installation and repair",
       ],
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/images/landscaping1.jpg",
     },
     {
       id: "handyman",
@@ -42,7 +42,7 @@ export default function ServicesPage() {
         "Deck and fence repair",
         "General home repairs and maintenance",
       ],
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/images/handyman1.jpg",
     },
     {
       id: "painting",
@@ -58,7 +58,7 @@ export default function ServicesPage() {
         "Wallpaper removal and installation",
         "Color consultation and selection",
       ],
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/images/painting1.jpg",
     },
     {
       id: "renovation",
@@ -74,7 +74,7 @@ export default function ServicesPage() {
         "Custom carpentry and built-ins",
         "Room additions and expansions",
       ],
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/images/renovation1.jpg",
     },
     {
       id: "seasonal",
@@ -90,7 +90,7 @@ export default function ServicesPage() {
         "Winterization services",
         "Seasonal property inspections",
       ],
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/images/seasonal1.jpg",
     },
   ]
 
@@ -100,7 +100,7 @@ export default function ServicesPage() {
       <section className="relative">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/placeholder.svg?height=600&width=1920"
+            src="/images/hero.jpg"
             alt="Seasonal Solutions Services"
             fill
             className="object-cover brightness-[0.7]"
@@ -196,4 +196,3 @@ export default function ServicesPage() {
     </div>
   )
 }
-
