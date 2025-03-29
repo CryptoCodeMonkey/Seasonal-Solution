@@ -105,15 +105,15 @@ export default function SiteFooter() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
                 <MapPin className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
-                <span className="text-muted-foreground">123 Main Street, Winnipeg, MB R3C 1A1</span>
+                <span className="text-muted-foreground">Serving Winnipeg, MB and surrounding areas</span>
               </li>
               <li className="flex items-start gap-2">
                 <Phone className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
-                <span className="text-muted-foreground">(204) 555-1234</span>
+                <span className="text-muted-foreground">(204) 990-3247</span>
               </li>
               <li className="flex items-start gap-2">
                 <Mail className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
-                <span className="text-muted-foreground">info@seasonalsolutions.ca</span>
+                <span className="text-muted-foreground">seasonalsolutionswinnipeg@gmail.com</span>
               </li>
             </ul>
 

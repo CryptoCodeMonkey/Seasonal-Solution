@@ -48,7 +48,7 @@ export default function ContactPage() {
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Contact Us</h1>
             <p className="text-xl text-muted-foreground">
-              Get in touch with our team to discuss your project or request a free quote.
+              Get in touch with Cole Doerksen, owner of Seasonal Solutions, to discuss your project or request a free quote.
             </p>
           </div>
         </div>
@@ -202,8 +202,8 @@ export default function ContactPage() {
                       <Phone className="mt-1 h-5 w-5 text-primary" />
                       <div>
                         <p className="font-medium">Phone</p>
-                        <Link href="tel:+12045551234" className="text-muted-foreground hover:text-primary">
-                          (204) 555-1234
+                        <Link href="tel:+12049903247" className="text-muted-foreground hover:text-primary">
+                          (204) 990-3247
                         </Link>
                       </div>
                     </li>
@@ -212,10 +212,10 @@ export default function ContactPage() {
                       <div>
                         <p className="font-medium">Email</p>
                         <Link
-                          href="mailto:info@seasonalsolutions.ca"
+                          href="mailto:seasonalsolutionswinnipeg@gmail.com"
                           className="text-muted-foreground hover:text-primary"
                         >
-                          info@seasonalsolutions.ca
+                          seasonalsolutionswinnipeg@gmail.com
                         </Link>
                       </div>
                     </li>

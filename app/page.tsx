@@ -26,7 +26,7 @@ export default function Home() {
       <section className="relative">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero.jpg"
+            src="/images/hero-landscaping.jpg"
             alt="Seasonal Solutions - Professional Handyman and Landscaping Services in Winnipeg"
             fill
             className="object-cover brightness-[0.7]"
@@ -62,13 +62,13 @@ export default function Home() {
             <span>Serving all of Winnipeg and surrounding areas</span>
           </div>
           <div className="flex items-center gap-6">
-            <Link href="tel:+12045551234" className="flex items-center gap-2 hover:underline">
+            <Link href="tel:+12049903247" className="flex items-center gap-2 hover:underline">
               <Phone className="h-5 w-5" />
-              <span>(204) 555-1234</span>
+              <span>(204) 990-3247</span>
             </Link>
-            <Link href="mailto:info@seasonalsolutions.ca" className="flex items-center gap-2 hover:underline">
+            <Link href="mailto:seasonalsolutionswinnipeg@gmail.com" className="flex items-center gap-2 hover:underline">
               <Mail className="h-5 w-5" />
-              <span>info@seasonalsolutions.ca</span>
+              <span>seasonalsolutionswinnipeg@gmail.com</span>
             </Link>
           </div>
         </div>

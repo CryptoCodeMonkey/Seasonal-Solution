@@ -1,86 +1,60 @@
 
-// This script downloads free stock images from Unsplash for the website
-const { createApi } = require('unsplash-js');
-const fetch = require('node-fetch');
 const fs = require('fs');
-const path = require('path');
 const https = require('https');
+const path = require('path');
 
-// Initialize the Unsplash API (using demo access key for limited usage)
-const unsplash = createApi({
-  accessKey: 'demo',
-  fetch: fetch,
-});
-
-// Define the image categories we need
-const imageRequirements = [
-  { name: 'hero', query: 'landscaping house', width: 1920, height: 800 },
-  { name: 'landscaping1', query: 'garden landscaping', width: 800, height: 600 },
-  { name: 'landscaping2', query: 'yard garden', width: 800, height: 600 },
-  { name: 'handyman1', query: 'home repair', width: 800, height: 600 },
-  { name: 'handyman2', query: 'carpentry', width: 800, height: 600 },
-  { name: 'painting', query: 'house painting', width: 800, height: 600 },
-  { name: 'renovation', query: 'home renovation', width: 800, height: 600 },
-  { name: 'deck', query: 'deck construction', width: 800, height: 600 },
-  { name: 'team', query: 'construction team', width: 800, height: 600 },
-  { name: 'person1', query: 'professional man portrait', width: 400, height: 400 },
-  { name: 'person2', query: 'professional woman portrait', width: 400, height: 400 },
-  { name: 'person3', query: 'carpenter portrait', width: 400, height: 400 },
+// Define image URLs for landscaping and handyman business
+const imageUrls = [
+  {
+    url: 'https://images.unsplash.com/photo-1589923188900-85dae523342b',
+    filename: 'hero-landscaping.jpg',
+    description: 'Professional landscaping with green lawn and garden'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e',
+    filename: 'handyman-service.jpg',
+    description: 'Handyman working with tools'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1598887142487-3c854d2171c7',
+    filename: 'lawn-mowing.jpg',
+    description: 'Professional lawn mowing service'
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1621905252472-943afaa20e20',
+    filename: 'home-repair.jpg',
+    description: 'Home repair and renovation'
+  }
 ];
 
-// Ensure the public/images directory exists
-const imagesDir = path.join(__dirname, '../public/images');
-if (!fs.existsSync(imagesDir)) {
-  fs.mkdirSync(imagesDir, { recursive: true });
+// Ensure the images directory exists
+const imgDir = path.join(__dirname, '../public/images');
+if (!fs.existsSync(imgDir)) {
+  fs.mkdirSync(imgDir, { recursive: true });
 }
 
-// Function to download an image
-const downloadImage = (url, filename) => {
-  return new Promise((resolve, reject) => {
-    const file = fs.createWriteStream(filename);
-    https.get(url, (response) => {
-      response.pipe(file);
-      file.on('finish', () => {
-        file.close(resolve);
-        console.log(`Downloaded: ${filename}`);
-      });
-    }).on('error', (err) => {
-      fs.unlink(filename, () => {}); // Delete the file if there's an error
-      reject(err);
-    });
-  });
-};
-
-// Main function to search and download images
-async function getImages() {
-  for (const req of imageRequirements) {
-    try {
-      const result = await unsplash.search.getPhotos({
-        query: req.query,
-        perPage: 1,
-      });
-      
-      if (result.errors) {
-        console.log('Error occurred: ', result.errors[0]);
-        continue;
-      }
-      
-      const photo = result.response.results[0];
-      if (!photo) {
-        console.log(`No images found for query: ${req.query}`);
-        continue;
-      }
-      
-      const downloadUrl = photo.urls.raw + `&w=${req.width}&h=${req.height}&fit=crop`;
-      const filename = path.join(imagesDir, `${req.name}.jpg`);
-      
-      await downloadImage(downloadUrl, filename);
-    } catch (error) {
-      console.error(`Error processing ${req.name}:`, error);
-    }
-  }
+// Download each image
+imageUrls.forEach(({ url, filename, description }) => {
+  const filePath = path.join(imgDir, filename);
+  console.log(`Downloading ${url} to ${filePath}...`);
   
-  console.log('All images downloaded successfully!');
-}
-
-getImages().catch(console.error);
+  https.get(`${url}?auto=format&fit=crop&w=1920&q=80`, (res) => {
+    if (res.statusCode !== 200) {
+      console.error(`Failed to download ${url}: ${res.statusCode}`);
+      return;
+    }
+    
+    const fileStream = fs.createWriteStream(filePath);
+    res.pipe(fileStream);
+    
+    fileStream.on('finish', () => {
+      console.log(`Downloaded ${filename} successfully`);
+    });
+    
+    fileStream.on('error', (err) => {
+      console.error(`Error writing ${filename}:`, err);
+    });
+  }).on('error', (err) => {
+    console.error(`Error downloading ${url}:`, err);
+  });
+});
