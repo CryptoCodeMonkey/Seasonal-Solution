@@ -87,28 +87,28 @@ export default function Home() {
 
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             <ServiceCard
-              icon={<Leaf className="h-10 w-10 text-primary" />}
               title="Landscaping"
               description="Professional landscape design, installation, and maintenance services."
-              link="/services/landscaping"
+              imageUrl="/images/lawn-mowing.jpg"
+              linkUrl="/services/landscaping"
             />
             <ServiceCard
-              icon={<Tool className="h-10 w-10 text-primary" />}
               title="Handyman Services"
               description="General repairs, installations, and maintenance for your home."
-              link="/services/handyman"
+              imageUrl="/images/handyman-service.jpg"
+              linkUrl="/services/handyman"
             />
             <ServiceCard
-              icon={<Paintbrush className="h-10 w-10 text-primary" />}
               title="Painting"
               description="Interior and exterior painting services with quality materials."
-              link="/services/painting"
+              imageUrl="/images/home-repair.jpg"
+              linkUrl="/services/painting"
             />
             <ServiceCard
-              icon={<Home className="h-10 w-10 text-primary" />}
               title="Home Renovation"
               description="Kitchen, bathroom, and basement renovations to transform your space."
-              link="/services/renovation"
+              imageUrl="/images/hero-landscaping.jpg"
+              linkUrl="/services/renovation"
             />
           </div>
 

@@ -1,196 +1,211 @@
-import Link from "next/link"
+
+import { Metadata } from "next"
 import Image from "next/image"
-import { Leaf, PenToolIcon as Tool, Paintbrush, Home, Wrench, Snowflake, ArrowRight } from "lucide-react"
+import Link from "next/link"
+import { 
+  Leaf,
+  PenToolIcon as Tool,
+  Paintbrush,
+  Home,
+  Snowflake,
+  Sprout,
+  Hammer,
+  Lightbulb,
+  ArrowRight
+} from "lucide-react"
 
 import { Button } from "@/components/ui/button"
+import { ServiceCard } from "@/components/service-card"
 
-export const metadata = {
-  title: "Services | Seasonal Solutions - Handyman & Landscaping in Winnipeg",
-  description:
-    "Explore our comprehensive handyman and landscaping services in Winnipeg. From lawn care to home renovations, we provide quality solutions for all your property needs.",
+export const metadata: Metadata = {
+  title: "Services - Seasonal Solutions",
+  description: "Professional handyman and landscaping services in Winnipeg. From home repairs to landscape design, we do it all.",
 }
 
 export default function ServicesPage() {
-  const services = [
-    {
-      id: "landscaping",
-      icon: <Leaf className="h-12 w-12 text-primary" />,
-      title: "Landscaping & Lawn Care",
-      description:
-        "Transform your outdoor space with our professional landscaping services. We offer landscape design, installation, lawn maintenance, garden care, and more.",
-      features: [
-        "Landscape design and planning",
-        "Lawn installation and maintenance",
-        "Garden bed creation and care",
-        "Tree and shrub planting and pruning",
-        "Mulching and decorative stone installation",
-        "Irrigation system installation and repair",
-      ],
-      image: "/images/landscaping1.jpg",
-    },
-    {
-      id: "handyman",
-      icon: <Tool className="h-12 w-12 text-primary" />,
-      title: "Handyman Services",
-      description:
-        "Our skilled handymen can tackle all your home repair and maintenance needs, from minor fixes to larger projects around your property.",
-      features: [
-        "Furniture assembly and installation",
-        "Drywall repair and installation",
-        "Door and window repair and replacement",
-        "Fixture installation and replacement",
-        "Deck and fence repair",
-        "General home repairs and maintenance",
-      ],
-      image: "/images/handyman1.jpg",
-    },
-    {
-      id: "painting",
-      icon: <Paintbrush className="h-12 w-12 text-primary" />,
-      title: "Interior & Exterior Painting",
-      description:
-        "Refresh your home with our professional painting services. We use quality materials and techniques to ensure a beautiful, long-lasting finish.",
-      features: [
-        "Interior wall and ceiling painting",
-        "Exterior house painting",
-        "Cabinet painting and refinishing",
-        "Deck and fence staining",
-        "Wallpaper removal and installation",
-        "Color consultation and selection",
-      ],
-      image: "/images/painting1.jpg",
-    },
-    {
-      id: "renovation",
-      icon: <Home className="h-12 w-12 text-primary" />,
-      title: "Home Renovations",
-      description:
-        "Transform your living spaces with our renovation services. From kitchens and bathrooms to basements, we can help you create the home of your dreams.",
-      features: [
-        "Kitchen renovations",
-        "Bathroom remodeling",
-        "Basement finishing",
-        "Flooring installation",
-        "Custom carpentry and built-ins",
-        "Room additions and expansions",
-      ],
-      image: "/images/renovation1.jpg",
-    },
-    {
-      id: "seasonal",
-      icon: <Snowflake className="h-12 w-12 text-primary" />,
-      title: "Seasonal Maintenance",
-      description:
-        "Keep your property in top condition year-round with our seasonal maintenance services, from spring cleanup to winter snow removal.",
-      features: [
-        "Spring and fall cleanup",
-        "Gutter cleaning and repair",
-        "Snow removal and ice management",
-        "Holiday light installation",
-        "Winterization services",
-        "Seasonal property inspections",
-      ],
-      image: "/images/seasonal1.jpg",
-    },
-  ]
-
   return (
-    <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="relative">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/hero.jpg"
-            alt="Seasonal Solutions Services"
-            fill
-            className="object-cover brightness-[0.7]"
-            priority
+    <div className="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
+      <div className="mb-16 text-center">
+        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-4">Our Services</h1>
+        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          Comprehensive handyman and landscaping solutions for all your property needs
+        </p>
+      </div>
+
+      {/* Landscaping Services */}
+      <section className="mb-20">
+        <div className="flex flex-col lg:flex-row gap-12 items-center mb-12">
+          <div className="lg:w-1/2">
+            <h2 className="text-3xl font-bold mb-6">Landscaping Services</h2>
+            <p className="mb-6 text-muted-foreground">
+              Transform your outdoor space with our professional landscaping services. From design to maintenance, we create beautiful and functional landscapes that enhance your property value.
+            </p>
+            <ul className="space-y-3 mb-8">
+              <li className="flex items-start gap-2">
+                <Leaf className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                <span>Professional landscape design and planning</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Leaf className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                <span>Lawn care and maintenance programs</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Leaf className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                <span>Garden bed installation and maintenance</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Leaf className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                <span>Tree and shrub planting and care</span>
+              </li>
+            </ul>
+            <Button size="lg" variant="outline" asChild>
+              <Link href="/contact" className="group">
+                Request a Consultation
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+          </div>
+          <div className="lg:w-1/2 relative h-[400px] w-full rounded-xl overflow-hidden">
+            <Image 
+              src="/images/hero-landscaping.jpg" 
+              alt="Professional landscaping services" 
+              fill 
+              className="object-cover"
+            />
+          </div>
+        </div>
+        
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mt-12">
+          <ServiceCard
+            title="Lawn Maintenance"
+            description="Regular mowing, edging, aeration, dethatching, and fertilization to keep your lawn healthy and beautiful."
+            imageUrl="/images/lawn-mowing.jpg"
+            linkUrl="/contact"
+          />
+          <ServiceCard
+            title="Garden Services"
+            description="Garden design, planting, mulching, weeding, and ongoing maintenance for vibrant garden beds."
+            imageUrl="/images/hero-landscaping.jpg"
+            linkUrl="/contact"
+          />
+          <ServiceCard
+            title="Seasonal Cleanup"
+            description="Spring and fall cleanup services to prepare your landscape for the changing seasons."
+            imageUrl="/images/hero-landscaping.jpg"
+            linkUrl="/contact"
           />
         </div>
-        <div className="container relative z-10 mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-32">
-          <div className="max-w-3xl">
-            <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">Our Services</h1>
-            <p className="mb-8 text-xl text-white/90">
-              From landscaping to home repairs and renovations, we provide comprehensive solutions for all your property
-              needs in Winnipeg.
+      </section>
+
+      {/* Handyman Services */}
+      <section className="mb-20">
+        <div className="flex flex-col lg:flex-row-reverse gap-12 items-center mb-12">
+          <div className="lg:w-1/2">
+            <h2 className="text-3xl font-bold mb-6">Handyman Services</h2>
+            <p className="mb-6 text-muted-foreground">
+              Our skilled handymen can tackle a wide range of home repair and maintenance tasks, from small fixes to larger projects.
             </p>
+            <ul className="space-y-3 mb-8">
+              <li className="flex items-start gap-2">
+                <Tool className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                <span>General home repairs and maintenance</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Tool className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                <span>Furniture assembly and installation</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Tool className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                <span>Drywall repair and painting</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Tool className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                <span>Basic plumbing and electrical repairs</span>
+              </li>
+            </ul>
+            <Button size="lg" variant="outline" asChild>
+              <Link href="/contact" className="group">
+                Get a Free Quote
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
           </div>
+          <div className="lg:w-1/2 relative h-[400px] w-full rounded-xl overflow-hidden">
+            <Image 
+              src="/images/handyman-service.jpg" 
+              alt="Professional handyman services" 
+              fill 
+              className="object-cover" 
+            />
+          </div>
+        </div>
+        
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mt-12">
+          <ServiceCard
+            title="Home Repairs"
+            description="General repairs including drywall, trim, shelving installation, door repairs, and more."
+            imageUrl="/images/home-repair.jpg"
+            linkUrl="/contact"
+          />
+          <ServiceCard
+            title="Mounting & Installation"
+            description="TV mounting, shelf installation, curtain rods, pictures, and other fixtures securely installed."
+            imageUrl="/images/handyman-service.jpg"
+            linkUrl="/contact"
+          />
+          <ServiceCard
+            title="Deck & Fence Repair"
+            description="Repair and maintenance of wooden decks, fences, and outdoor structures."
+            imageUrl="/images/handyman-service.jpg"
+            linkUrl="/contact"
+          />
         </div>
       </section>
 
-      {/* Services Overview */}
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">Comprehensive Property Solutions</h2>
-            <p className="mx-auto max-w-2xl text-muted-foreground">
-              We offer a wide range of services to keep your property looking its best and functioning properly
-              throughout all seasons.
-            </p>
-          </div>
-
-          <div className="space-y-24">
-            {services.map((service, index) => (
-              <div
-                key={service.id}
-                id={service.id}
-                className={`grid gap-8 lg:grid-cols-2 lg:gap-12 ${index % 2 === 1 ? "lg:grid-flow-dense" : ""}`}
-              >
-                <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
-                  <div className="mb-4 flex items-center gap-3">
-                    {service.icon}
-                    <h3 className="text-2xl font-bold sm:text-3xl">{service.title}</h3>
-                  </div>
-                  <p className="mb-6 text-muted-foreground">{service.description}</p>
-
-                  <ul className="mb-8 space-y-2">
-                    {service.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <Wrench className="mt-1 h-4 w-4 text-primary" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <Button asChild>
-                    <Link href="/contact" className="group">
-                      Get a Quote
-                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </Link>
-                  </Button>
-                </div>
-
-                <div className="relative h-[300px] overflow-hidden rounded-lg sm:h-[400px]">
-                  <Image src={service.image || "/placeholder.svg"} alt={service.title} fill className="object-cover" />
-                </div>
-              </div>
-            ))}
-          </div>
+      {/* Seasonal Services */}
+      <section>
+        <h2 className="text-3xl font-bold mb-10 text-center">Seasonal Services</h2>
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <ServiceCard
+            title="Spring Services"
+            description="Spring cleanup, garden bed preparation, mulching, planting, and lawn treatments."
+            imageUrl="/images/lawn-mowing.jpg"
+            linkUrl="/contact"
+          />
+          <ServiceCard
+            title="Summer Services"
+            description="Lawn maintenance, garden care, irrigation management, and outdoor living space enhancement."
+            imageUrl="/images/hero-landscaping.jpg"
+            linkUrl="/contact"
+          />
+          <ServiceCard
+            title="Fall Services"
+            description="Leaf removal, garden winterization, gutter cleaning, and fall lawn care."
+            imageUrl="/images/lawn-mowing.jpg"
+            linkUrl="/contact"
+          />
+          <ServiceCard
+            title="Winter Services"
+            description="Snow removal, sidewalk clearing, ice management, and winter home maintenance."
+            imageUrl="/images/home-repair.jpg"
+            linkUrl="/contact"
+          />
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-primary py-16 text-primary-foreground lg:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl">Ready to Get Started?</h2>
-            <p className="mb-8 text-xl text-primary-foreground/90">
-              Contact us today to discuss your project and get a free, no-obligation quote.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" variant="secondary" asChild>
-                <Link href="/contact">Request a Quote</Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10"
-                asChild
-              >
-                <Link href="/gallery">View Our Work</Link>
-              </Button>
-            </div>
-          </div>
+      {/* Call to Action */}
+      <section className="mt-20 text-center">
+        <h2 className="text-3xl font-bold mb-6">Ready to Get Started?</h2>
+        <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+          Contact us today for a free consultation and quote on any of our services.
+        </p>
+        <div className="flex flex-wrap justify-center gap-4">
+          <Button size="lg" asChild>
+            <Link href="/contact">Request a Quote</Link>
+          </Button>
+          <Button size="lg" variant="outline" asChild>
+            <Link href="/gallery">View Our Work</Link>
+          </Button>
         </div>
       </section>
     </div>

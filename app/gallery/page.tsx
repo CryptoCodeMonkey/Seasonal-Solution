@@ -1,190 +1,200 @@
+
+import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-export const metadata = {
-  title: "Our Work | Seasonal Solutions - Handyman & Landscaping in Winnipeg",
-  description:
-    "View our portfolio of completed handyman and landscaping projects in Winnipeg. See examples of our quality workmanship and get inspired for your own project.",
+export const metadata: Metadata = {
+  title: "Project Gallery - Seasonal Solutions",
+  description: "View our completed handyman and landscaping projects in Winnipeg and surrounding areas.",
 }
 
 export default function GalleryPage() {
-  const categories = [
-    { id: "all", label: "All Projects" },
-    { id: "landscaping", label: "Landscaping" },
-    { id: "handyman", label: "Handyman" },
-    { id: "painting", label: "Painting" },
-    { id: "renovation", label: "Renovation" },
-  ]
-
-  const projects = [
-    {
-      id: 1,
-      title: "Backyard Transformation",
-      category: "landscaping",
-      location: "River Heights, Winnipeg",
-      description: "Complete backyard redesign with new patio, garden beds, and custom pergola.",
-      image: "/images/landscaping1.jpg",
-    },
-    {
-      id: 2,
-      title: "Kitchen Renovation",
-      category: "renovation",
-      location: "St. Vital, Winnipeg",
-      description: "Modern kitchen renovation with custom cabinets, quartz countertops, and new appliances.",
-      image: "/images/renovation.jpg",
-    },
-    {
-      id: 3,
-      title: "Exterior House Painting",
-      category: "painting",
-      location: "Transcona, Winnipeg",
-      description: "Complete exterior painting with color consultation and premium weather-resistant paint.",
-      image: "/images/painting.jpg",
-    },
-    {
-      id: 4,
-      title: "Deck Construction",
-      category: "handyman",
-      location: "St. James, Winnipeg",
-      description: "Custom cedar deck with built-in seating and pergola for shade.",
-      image: "/images/deck.jpg",
-    },
-    {
-      id: 5,
-      title: "Front Yard Landscaping",
-      category: "landscaping",
-      location: "Fort Garry, Winnipeg",
-      description: "Front yard makeover with new walkway, garden beds, and decorative stone features.",
-      image: "/images/landscaping2.jpg",
-    },
-    {
-      id: 6,
-      title: "Bathroom Remodel",
-      category: "renovation",
-      location: "St. Boniface, Winnipeg",
-      description: "Complete bathroom renovation with custom tile work, new fixtures, and modern vanity.",
-      image: "/images/renovation.jpg",
-    },
-    {
-      id: 7,
-      title: "Interior Painting",
-      category: "painting",
-      location: "Charleswood, Winnipeg",
-      description: "Full interior painting with custom accent walls and trim work.",
-      image: "/images/painting.jpg",
-    },
-    {
-      id: 8,
-      title: "Fence Installation",
-      category: "handyman",
-      location: "East St. Paul, Winnipeg",
-      description: "Custom privacy fence installation with decorative post caps and gate.",
-      image: "/images/handyman1.jpg",
-    },
-    {
-      id: 9,
-      title: "Garden Design",
-      category: "landscaping",
-      location: "West St. Paul, Winnipeg",
-      description: "Perennial garden design with native plants, decorative stones, and pathway.",
-      image: "/images/landscaping2.jpg",
-    },
-  ]
-
   return (
-    <div className="flex flex-col">
-      <section className="bg-muted py-12 md:py-16 lg:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Our Work</h1>
-            <p className="text-xl text-muted-foreground">
-              Browse our portfolio of completed projects and get inspired for your own home improvement journey.
-            </p>
-          </div>
-        </div>
-      </section>
+    <div className="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
+      <div className="mb-16 text-center">
+        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-4">Our Project Gallery</h1>
+        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          Browse through some of our recent handyman and landscaping projects in Winnipeg
+        </p>
+      </div>
 
-      <section className="py-12 md:py-16 lg:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <Tabs defaultValue="all" className="w-full">
-            <div className="mb-8 flex justify-center">
-              <TabsList>
-                {categories.map((category) => (
-                  <TabsTrigger key={category.id} value={category.id}>
-                    {category.label}
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-            </div>
+      {/* Gallery Categories */}
+      <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <Button variant="outline" className="rounded-full">All Projects</Button>
+        <Button variant="ghost" className="rounded-full">Landscaping</Button>
+        <Button variant="ghost" className="rounded-full">Home Repair</Button>
+        <Button variant="ghost" className="rounded-full">Renovations</Button>
+        <Button variant="ghost" className="rounded-full">Seasonal</Button>
+      </div>
 
-            {categories.map((category) => (
-              <TabsContent key={category.id} value={category.id} className="mt-0">
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                  {projects
-                    .filter((project) => category.id === "all" || project.category === category.id)
-                    .map((project) => (
-                      <div
-                        key={project.id}
-                        className="group overflow-hidden rounded-lg border bg-background shadow-sm transition-all hover:shadow-md"
-                      >
-                        <div className="aspect-video overflow-hidden">
-                          <Image
-                            src={project.image || "/placeholder.svg"}
-                            alt={project.title}
-                            width={800}
-                            height={600}
-                            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                          />
-                        </div>
-                        <div className="p-6">
-                          <h3 className="mb-2 text-xl font-bold">{project.title}</h3>
-                          <p className="mb-1 text-sm text-primary">{project.location}</p>
-                          <p className="mb-4 text-muted-foreground">{project.description}</p>
-                          <Button variant="outline" size="sm" asChild>
-                            <Link href={`/gallery/${project.id}`} className="group inline-flex items-center">
-                              View Project
-                              <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                            </Link>
-                          </Button>
-                        </div>
-                      </div>
-                    ))}
-                </div>
-              </TabsContent>
-            ))}
-          </Tabs>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="bg-primary py-12 text-primary-foreground md:py-16 lg:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl">Ready to Start Your Project?</h2>
-            <p className="mb-8 text-xl text-primary-foreground/90">
-              Contact us today to discuss your ideas and get a free, no-obligation quote.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" variant="secondary" asChild>
-                <Link href="/contact">Request a Quote</Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10"
-                asChild
-              >
-                <Link href="/services">Explore Our Services</Link>
+      {/* Gallery Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        {/* Gallery Item 1 */}
+        <div className="group overflow-hidden rounded-lg">
+          <div className="relative h-72 w-full">
+            <Image 
+              src="/images/hero-landscaping.jpg" 
+              alt="Front yard landscaping project" 
+              fill 
+              className="object-cover transition-transform duration-500 group-hover:scale-110" 
+            />
+            <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <Button variant="secondary" size="sm" className="font-semibold">
+                View Project
               </Button>
             </div>
           </div>
+          <div className="p-4">
+            <h3 className="text-lg font-semibold">Front Yard Transformation</h3>
+            <p className="text-muted-foreground text-sm">Landscaping Project in River Heights</p>
+          </div>
+        </div>
+
+        {/* Gallery Item 2 */}
+        <div className="group overflow-hidden rounded-lg">
+          <div className="relative h-72 w-full">
+            <Image 
+              src="/images/handyman-service.jpg" 
+              alt="Kitchen renovation project" 
+              fill 
+              className="object-cover transition-transform duration-500 group-hover:scale-110" 
+            />
+            <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <Button variant="secondary" size="sm" className="font-semibold">
+                View Project
+              </Button>
+            </div>
+          </div>
+          <div className="p-4">
+            <h3 className="text-lg font-semibold">Kitchen Renovation</h3>
+            <p className="text-muted-foreground text-sm">Home Improvement in St. Vital</p>
+          </div>
+        </div>
+
+        {/* Gallery Item 3 */}
+        <div className="group overflow-hidden rounded-lg">
+          <div className="relative h-72 w-full">
+            <Image 
+              src="/images/lawn-mowing.jpg" 
+              alt="Backyard patio installation" 
+              fill 
+              className="object-cover transition-transform duration-500 group-hover:scale-110" 
+            />
+            <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <Button variant="secondary" size="sm" className="font-semibold">
+                View Project
+              </Button>
+            </div>
+          </div>
+          <div className="p-4">
+            <h3 className="text-lg font-semibold">Backyard Patio Installation</h3>
+            <p className="text-muted-foreground text-sm">Landscaping Project in Transcona</p>
+          </div>
+        </div>
+
+        {/* Gallery Item 4 */}
+        <div className="group overflow-hidden rounded-lg">
+          <div className="relative h-72 w-full">
+            <Image 
+              src="/images/home-repair.jpg" 
+              alt="Basement finishing project" 
+              fill 
+              className="object-cover transition-transform duration-500 group-hover:scale-110" 
+            />
+            <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <Button variant="secondary" size="sm" className="font-semibold">
+                View Project
+              </Button>
+            </div>
+          </div>
+          <div className="p-4">
+            <h3 className="text-lg font-semibold">Basement Finishing</h3>
+            <p className="text-muted-foreground text-sm">Renovation in St. James</p>
+          </div>
+        </div>
+
+        {/* Gallery Item 5 */}
+        <div className="group overflow-hidden rounded-lg">
+          <div className="relative h-72 w-full">
+            <Image 
+              src="/images/hero-landscaping.jpg" 
+              alt="Garden design and installation" 
+              fill 
+              className="object-cover transition-transform duration-500 group-hover:scale-110" 
+            />
+            <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <Button variant="secondary" size="sm" className="font-semibold">
+                View Project
+              </Button>
+            </div>
+          </div>
+          <div className="p-4">
+            <h3 className="text-lg font-semibold">Garden Design & Installation</h3>
+            <p className="text-muted-foreground text-sm">Landscaping in Fort Garry</p>
+          </div>
+        </div>
+
+        {/* Gallery Item 6 */}
+        <div className="group overflow-hidden rounded-lg">
+          <div className="relative h-72 w-full">
+            <Image 
+              src="/images/handyman-service.jpg" 
+              alt="Deck repair project" 
+              fill 
+              className="object-cover transition-transform duration-500 group-hover:scale-110" 
+            />
+            <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <Button variant="secondary" size="sm" className="font-semibold">
+                View Project
+              </Button>
+            </div>
+          </div>
+          <div className="p-4">
+            <h3 className="text-lg font-semibold">Deck Repair & Refinishing</h3>
+            <p className="text-muted-foreground text-sm">Maintenance in Charleswood</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Load More Button */}
+      <div className="text-center mb-20">
+        <Button variant="outline" size="lg">
+          Load More Projects
+        </Button>
+      </div>
+
+      {/* Testimonial */}
+      <div className="bg-muted rounded-xl p-8 mb-20">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-2xl italic mb-6">
+            "Cole and his team did an amazing job transforming our backyard into the perfect outdoor living space. 
+            Professional, punctual, and the quality of work exceeded our expectations!"
+          </p>
+          <p className="font-semibold">- Sarah Johnson, River Heights</p>
+        </div>
+      </div>
+
+      {/* Call to Action */}
+      <section className="text-center">
+        <h2 className="text-3xl font-bold mb-6">Ready to Start Your Project?</h2>
+        <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+          Contact us today for a free consultation on your handyman or landscaping project.
+        </p>
+        <div className="flex flex-wrap justify-center gap-4">
+          <Button size="lg" asChild>
+            <Link href="/contact">Get a Free Quote</Link>
+          </Button>
+          <Button size="lg" variant="outline" asChild>
+            <Link href="/services" className="group">
+              View Our Services
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Button>
         </div>
       </section>
     </div>
   )
 }
-

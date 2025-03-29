@@ -1,277 +1,234 @@
+import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
-import { CheckCircle, Users, Award, Clock, ArrowRight } from "lucide-react"
+import { 
+  Phone,
+  Mail,
+  UserCircle2,
+  Award,
+  Clock,
+  Shield,
+  ThumbsUp,
+  ArrowRight
+} from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 
-export const metadata = {
-  title: "About Us | Seasonal Solutions - Handyman & Landscaping in Winnipeg",
-  description:
-    "Learn about Seasonal Solutions, your trusted handyman and landscaping experts in Winnipeg. Discover our story, our team, and our commitment to quality service.",
+export const metadata: Metadata = {
+  title: "About Us - Seasonal Solutions",
+  description: "Learn more about Seasonal Solutions, your trusted handyman and landscaping service in Winnipeg.",
 }
 
 export default function AboutPage() {
-  const values = [
-    {
-      icon: <CheckCircle className="h-8 w-8 text-primary" />,
-      title: "Quality Workmanship",
-      description: "We take pride in our work and are committed to delivering exceptional results on every project.",
-    },
-    {
-      icon: <Users className="h-8 w-8 text-primary" />,
-      title: "Customer Satisfaction",
-      description:
-        "Your satisfaction is our top priority. We work closely with you to ensure your vision becomes reality.",
-    },
-    {
-      icon: <Award className="h-8 w-8 text-primary" />,
-      title: "Professionalism",
-      description: "Our team is reliable, punctual, and respectful of your property and your time.",
-    },
-    {
-      icon: <Clock className="h-8 w-8 text-primary" />,
-      title: "Reliability",
-      description: "We show up on time, complete projects on schedule, and communicate clearly throughout the process.",
-    },
-  ]
-
-  const team = [
-    {
-      name: "John Smith",
-      role: "Founder & Lead Contractor",
-      image: "/images/person1.jpg",
-      bio: "With over 15 years of experience in construction and landscaping, John founded Seasonal Solutions to provide quality services to homeowners in Winnipeg.",
-    },
-    {
-      name: "Sarah Johnson",
-      role: "Landscape Designer",
-      image: "/images/person2.jpg",
-      bio: "Sarah brings creativity and expertise to our landscaping projects, with a degree in Landscape Architecture and a passion for sustainable design.",
-    },
-    {
-      name: "Mike Williams",
-      role: "Master Carpenter",
-      image: "/images/person3.jpg",
-      bio: "Mike's attention to detail and craftsmanship ensure that all of our carpentry and renovation projects are completed to the highest standards.",
-    },
-  ]
-
   return (
-    <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="bg-muted py-12 md:py-16 lg:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
-            <div className="flex flex-col justify-center">
-              <h1 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                About Seasonal Solutions
-              </h1>
-              <p className="mb-6 text-xl text-muted-foreground">
-                Your trusted handyman and landscaping experts in Winnipeg, providing quality services for all seasons.
-              </p>
-              <p className="mb-6 text-muted-foreground">
-                Founded in 2010, Seasonal Solutions has been serving the Winnipeg community with professional handyman
-                and landscaping services. Our team of skilled professionals is dedicated to delivering exceptional
-                results and customer satisfaction on every project.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button asChild>
-                  <Link href="/contact">Contact Us</Link>
-                </Button>
-                <Button variant="outline" asChild>
-                  <Link href="/services">Our Services</Link>
-                </Button>
-              </div>
-            </div>
-            <div className="relative h-[300px] overflow-hidden rounded-lg sm:h-[400px] lg:h-full">
-              <Image
-                src="/images/team.jpg"
-                alt="Seasonal Solutions Team"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+    <div className="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
+      <div className="mb-16 text-center">
+        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-4">About Seasonal Solutions</h1>
+        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          Your trusted partner for professional handyman and landscaping services in Winnipeg
+        </p>
+      </div>
 
-      {/* Our Story */}
-      <section className="py-12 md:py-16 lg:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">Our Story</h2>
-            <p className="mb-6 text-muted-foreground">
-              Seasonal Solutions was founded with a simple mission: to provide reliable, high-quality handyman and
-              landscaping services to homeowners in Winnipeg. What started as a small operation has grown into a trusted
-              local business with a reputation for excellence.
+      {/* Company Story */}
+      <section className="mb-20">
+        <div className="flex flex-col lg:flex-row gap-12 items-center">
+          <div className="lg:w-1/2">
+            <h2 className="text-3xl font-bold mb-6">Our Story</h2>
+            <p className="mb-4 text-muted-foreground">
+              Seasonal Solutions was founded by Cole Doerksen with a simple mission: to provide Winnipeg homeowners with reliable, high-quality handyman and landscaping services throughout the year.
             </p>
-            <p className="mb-6 text-muted-foreground">
-              Our founder, John Smith, began his career in construction and landscaping over 15 years ago. After working
-              for various companies, he noticed a gap in the market for a service provider that could handle both
-              interior and exterior projects with the same level of care and expertise. This insight led to the creation
-              of Seasonal Solutions.
+            <p className="mb-4 text-muted-foreground">
+              With years of experience in home maintenance and landscaping, Cole identified a need for a comprehensive service that could address both indoor and outdoor property needs with the same level of professionalism and attention to detail.
             </p>
-            <p className="text-muted-foreground">
-              Today, we're proud to have served hundreds of homeowners throughout Winnipeg, helping them maintain and
-              improve their properties in every season. Our team has grown, but our commitment to quality workmanship
-              and customer satisfaction remains the same.
+            <p className="mb-4 text-muted-foreground">
+              Today, Seasonal Solutions has grown to serve homeowners across Winnipeg and surrounding areas, maintaining the same commitment to quality, reliability, and customer satisfaction that has been our foundation since day one.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Values */}
-      <section className="bg-muted py-12 md:py-16 lg:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">Our Values</h2>
-            <p className="mx-auto max-w-2xl text-muted-foreground">
-              These core principles guide everything we do at Seasonal Solutions.
-            </p>
-          </div>
-
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {values.map((value, index) => (
-              <Card key={index}>
-                <CardContent className="flex flex-col items-center p-6 text-center">
-                  <div className="mb-4 rounded-full bg-primary/10 p-3">{value.icon}</div>
-                  <h3 className="mb-2 text-xl font-bold">{value.title}</h3>
-                  <p className="text-muted-foreground">{value.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Our Team */}
-      <section className="py-12 md:py-16 lg:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">Meet Our Team</h2>
-            <p className="mx-auto max-w-2xl text-muted-foreground">
-              Our experienced professionals are dedicated to delivering exceptional service and quality workmanship.
-            </p>
-          </div>
-
-          <div className="grid gap-8 md:grid-cols-3">
-            {team.map((member, index) => (
-              <Card key={index}>
-                <CardContent className="p-6">
-                  <div className="mb-4 aspect-square overflow-hidden rounded-full">
-                    <Image
-                      src={member.image || "/placeholder.svg"}
-                      alt={member.name}
-                      width={300}
-                      height={300}
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
-                  <div className="text-center">
-                    <h3 className="mb-1 text-xl font-bold">{member.name}</h3>
-                    <p className="mb-4 text-sm text-primary">{member.role}</p>
-                    <p className="text-muted-foreground">{member.bio}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="bg-muted py-12 md:py-16 lg:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
-            <div className="relative h-[300px] overflow-hidden rounded-lg sm:h-[400px] lg:h-full">
-              <Image
-                src="/placeholder.svg?height=600&width=800"
-                alt="Seasonal Solutions Quality Work"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="flex flex-col justify-center">
-              <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl">Why Choose Us</h2>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="mt-1 h-5 w-5 text-primary" />
-                  <div>
-                    <h3 className="font-bold">Experienced Professionals</h3>
-                    <p className="text-muted-foreground">
-                      Our team brings years of experience and expertise to every project, ensuring quality results.
-                    </p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="mt-1 h-5 w-5 text-primary" />
-                  <div>
-                    <h3 className="font-bold">Comprehensive Services</h3>
-                    <p className="text-muted-foreground">
-                      From landscaping to home repairs, we provide a wide range of services to meet all your property
-                      needs.
-                    </p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="mt-1 h-5 w-5 text-primary" />
-                  <div>
-                    <h3 className="font-bold">Local Expertise</h3>
-                    <p className="text-muted-foreground">
-                      As Winnipeg locals, we understand the unique challenges of our climate and design solutions
-                      accordingly.
-                    </p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="mt-1 h-5 w-5 text-primary" />
-                  <div>
-                    <h3 className="font-bold">Customer-Focused Approach</h3>
-                    <p className="text-muted-foreground">
-                      We listen to your needs and work closely with you to ensure your complete satisfaction.
-                    </p>
-                  </div>
-                </li>
-              </ul>
-              <Button className="mt-6" asChild>
+            <div className="mt-8">
+              <Button size="lg" variant="outline" asChild>
                 <Link href="/contact" className="group">
-                  Get Started Today
+                  Contact Us
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
             </div>
           </div>
+          <div className="lg:w-1/2 relative h-[400px] w-full rounded-xl overflow-hidden">
+            <Image 
+              src="/images/hero-landscaping.jpg" 
+              alt="Seasonal Solutions Team" 
+              fill 
+              className="object-cover" 
+            />
+          </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-12 md:py-16 lg:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-lg bg-primary p-8 text-primary-foreground md:p-12 lg:p-16">
-            <div className="mx-auto max-w-3xl text-center">
-              <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl">Ready to Transform Your Space?</h2>
-              <p className="mb-8 text-xl text-primary-foreground/90">
-                Contact us today to discuss your project and get a free, no-obligation quote.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Button size="lg" variant="secondary" asChild>
-                  <Link href="/contact">Request a Quote</Link>
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10"
-                  asChild
-                >
-                  <Link href="/services">Explore Our Services</Link>
-                </Button>
-              </div>
+      {/* Meet the Owner */}
+      <section className="mb-20">
+        <h2 className="text-3xl font-bold mb-10 text-center">Meet the Owner</h2>
+        <div className="flex flex-col md:flex-row gap-8 items-center max-w-4xl mx-auto">
+          <div className="md:w-1/3">
+            <div className="relative w-64 h-64 mx-auto rounded-full overflow-hidden">
+              <Image 
+                src="/images/handyman-service.jpg" 
+                alt="Cole Doerksen" 
+                fill 
+                className="object-cover" 
+              />
             </div>
           </div>
+          <div className="md:w-2/3">
+            <h3 className="text-2xl font-bold mb-2">Cole Doerksen</h3>
+            <p className="text-primary font-medium mb-4">Founder & Owner</p>
+            <p className="mb-4 text-muted-foreground">
+              With a background in both construction and horticulture, Cole brings a unique combination of skills that perfectly suits the diverse needs of Seasonal Solutions' clients.
+            </p>
+            <p className="mb-4 text-muted-foreground">
+              His dedication to quality workmanship and customer satisfaction has been the driving force behind the company's growth and success.
+            </p>
+            <div className="flex flex-col space-y-2">
+              <Link href="tel:+12049903247" className="flex items-center gap-2 hover:text-primary">
+                <Phone className="h-5 w-5" />
+                <span>(204) 990-3247</span>
+              </Link>
+              <Link href="mailto:seasonalsolutionswinnipeg@gmail.com" className="flex items-center gap-2 hover:text-primary">
+                <Mail className="h-5 w-5" />
+                <span>seasonalsolutionswinnipeg@gmail.com</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Values */}
+      <section className="mb-20">
+        <h2 className="text-3xl font-bold mb-10 text-center">Our Values</h2>
+        <div className="grid gap-8 md:grid-cols-3">
+          <Card>
+            <CardContent className="flex flex-col items-center p-6 text-center">
+              <div className="mb-4 rounded-full bg-primary/10 p-3">
+                <ThumbsUp className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="mb-2 text-xl font-bold">Quality</h3>
+              <p className="text-muted-foreground">
+                We take pride in our workmanship and use only premium materials to ensure lasting results on every project.
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="flex flex-col items-center p-6 text-center">
+              <div className="mb-4 rounded-full bg-primary/10 p-3">
+                <Clock className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="mb-2 text-xl font-bold">Reliability</h3>
+              <p className="text-muted-foreground">
+                We arrive on time, provide accurate quotes, and complete projects on schedule, respecting your time and property.
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="flex flex-col items-center p-6 text-center">
+              <div className="mb-4 rounded-full bg-primary/10 p-3">
+                <Shield className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="mb-2 text-xl font-bold">Integrity</h3>
+              <p className="text-muted-foreground">
+                We operate with transparency and honesty, treating every client's home as if it were our own.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="mb-20">
+        <h2 className="text-3xl font-bold mb-10 text-center">Why Choose Seasonal Solutions</h2>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="flex gap-4">
+            <div className="shrink-0">
+              <div className="rounded-full bg-primary/10 p-3 h-12 w-12 flex items-center justify-center">
+                <Award className="h-6 w-6 text-primary" />
+              </div>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-2">Experienced Professionals</h3>
+              <p className="text-muted-foreground">Our team brings years of experience in both handyman services and landscaping.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="shrink-0">
+              <div className="rounded-full bg-primary/10 p-3 h-12 w-12 flex items-center justify-center">
+                <Shield className="h-6 w-6 text-primary" />
+              </div>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-2">Fully Insured</h3>
+              <p className="text-muted-foreground">We're fully insured for your protection and peace of mind.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="shrink-0">
+              <div className="rounded-full bg-primary/10 p-3 h-12 w-12 flex items-center justify-center">
+                <ThumbsUp className="h-6 w-6 text-primary" />
+              </div>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-2">Satisfaction Guaranteed</h3>
+              <p className="text-muted-foreground">We're not satisfied until you're completely happy with our work.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="shrink-0">
+              <div className="rounded-full bg-primary/10 p-3 h-12 w-12 flex items-center justify-center">
+                <UserCircle2 className="h-6 w-6 text-primary" />
+              </div>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-2">Personalized Service</h3>
+              <p className="text-muted-foreground">We take the time to understand your specific needs and preferences.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="shrink-0">
+              <div className="rounded-full bg-primary/10 p-3 h-12 w-12 flex items-center justify-center">
+                <Clock className="h-6 w-6 text-primary" />
+              </div>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-2">Prompt & Reliable</h3>
+              <p className="text-muted-foreground">We respect your time with punctual service and clear communication.</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="shrink-0">
+              <div className="rounded-full bg-primary/10 p-3 h-12 w-12 flex items-center justify-center">
+                <Mail className="h-6 w-6 text-primary" />
+              </div>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-2">Free Consultations</h3>
+              <p className="text-muted-foreground">We offer complimentary quotes and consultations for all services.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="text-center">
+        <h2 className="text-3xl font-bold mb-6">Ready to Experience the Seasonal Solutions Difference?</h2>
+        <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+          Contact us today to discuss your home maintenance and landscaping needs.
+        </p>
+        <div className="flex flex-wrap justify-center gap-4">
+          <Button size="lg" asChild>
+            <Link href="/contact">Contact Us</Link>
+          </Button>
+          <Button size="lg" variant="outline" asChild>
+            <Link href="/services">View Our Services</Link>
+          </Button>
         </div>
       </section>
     </div>
   )
 }
-
