@@ -1627,6 +1627,10 @@ video {
 .text-foreground\/50 {
   color: hsl(var(--foreground) / 0.5);
 }
+.text-gray-600 {
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity, 1));
+}
 .text-muted {
   color: hsl(var(--muted));
 }
@@ -2810,6 +2814,11 @@ video {
 
 .dark\:border-destructive:is(.dark *) {
   border-color: hsl(var(--destructive));
+}
+
+.dark\:text-gray-400:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity, 1));
 }
 
 @media (min-width: 640px) {
