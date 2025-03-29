@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { ThemeToggle } from "@/components/theme-toggle" // Added import for ThemeToggle
 
-export default function SiteHeader() {
+export function SiteHeader() {
   const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 

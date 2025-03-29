@@ -4,7 +4,7 @@ import { Facebook, Instagram, Twitter, Mail, Phone, MapPin, Leaf, Wrench } from 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
-export default function SiteFooter() {
+export function SiteFooter() {
   return (
     <footer className="bg-muted">
       <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
