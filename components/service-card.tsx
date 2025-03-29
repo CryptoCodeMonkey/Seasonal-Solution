@@ -1,28 +1,33 @@
-import type React from "react"
-import Link from "next/link"
-import { ArrowRight } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
+
+import React from 'react';
+import { Card, CardContent } from "@/components/ui/card";
+import Link from "next/link";
 
 interface ServiceCardProps {
-  icon: React.ReactNode
-  title: string
-  description: string
-  link: string
+  title: string;
+  description: string;
+  link?: string;
+  icon?: React.ReactNode;
 }
 
-export default function ServiceCard({ icon, title, description, link }: ServiceCardProps) {
-  return (
-    <Card className="transition-all hover:shadow-md">
-      <CardContent className="flex flex-col items-center p-6 text-center">
-        <div className="mb-4">{icon}</div>
-        <h3 className="mb-2 text-xl font-bold">{title}</h3>
-        <p className="mb-4 text-muted-foreground">{description}</p>
-        <Link href={link} className="group mt-auto inline-flex items-center text-sm font-medium text-primary">
-          Learn More
-          <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-        </Link>
+export function ServiceCard({ title, description, link, icon }: ServiceCardProps) {
+  const content = (
+    <Card className="h-full">
+      <CardContent className="flex flex-col items-center justify-center h-full p-6">
+        {icon && <div className="mb-4 text-4xl">{icon}</div>}
+        <h3 className="text-xl font-bold mb-2">{title}</h3>
+        <p className="text-center text-gray-600 dark:text-gray-400">{description}</p>
       </CardContent>
     </Card>
-  )
-}
+  );
 
+  if (link) {
+    return (
+      <Link href={link} className="block h-full transition-transform hover:scale-105">
+        {content}
+      </Link>
+    );
+  }
+
+  return content;
+}
