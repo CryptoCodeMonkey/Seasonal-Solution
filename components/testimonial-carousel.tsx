@@ -4,6 +4,8 @@ import { useState, useEffect } from "react"
 import { ChevronLeft, ChevronRight, Star } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
+import { getUnsplashImage } from "@/lib/unsplash"
 
 const testimonials = [
   {
@@ -12,6 +14,7 @@ const testimonials = [
     location: "River Heights, Winnipeg",
     text: "Seasonal Solutions transformed our backyard into a beautiful outdoor living space. Their attention to detail and professionalism exceeded our expectations. Highly recommended for any landscaping project!",
     rating: 5,
+    image: getUnsplashImage("contractor2"),
   },
   {
     id: 2,
@@ -19,6 +22,7 @@ const testimonials = [
     location: "St. Vital, Winnipeg",
     text: "I've used their handyman services for various projects around my home, from fixing a leaky faucet to installing new light fixtures. Always reliable, on time, and fairly priced.",
     rating: 5,
+    image: getUnsplashImage("contractor1"),
   },
   {
     id: 3,
@@ -26,6 +30,7 @@ const testimonials = [
     location: "Transcona, Winnipeg",
     text: "The team at Seasonal Solutions did an amazing job with our kitchen renovation. They were professional, kept the work area clean, and completed the project on schedule. We couldn't be happier with the results!",
     rating: 5,
+    image: getUnsplashImage("contractor2"),
   },
   {
     id: 4,
@@ -33,6 +38,7 @@ const testimonials = [
     location: "St. James, Winnipeg",
     text: "I've been using their seasonal lawn care services for two years now, and my yard has never looked better. Their team is knowledgeable, friendly, and always goes the extra mile.",
     rating: 4,
+    image: getUnsplashImage("contractor3"),
   },
 ]
 
@@ -82,9 +88,19 @@ export default function TestimonialCarousel() {
                   ))}
                 </div>
                 <p className="mb-4 italic text-muted-foreground">"{testimonial.text}"</p>
-                <div>
-                  <p className="font-semibold">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.location}</p>
+                <div className="flex items-center gap-3">
+                  <div className="relative h-12 w-12 overflow-hidden rounded-full">
+                    <Image
+                      src={testimonial.image || "/placeholder.svg"}
+                      alt={testimonial.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div>
+                    <p className="font-semibold">{testimonial.name}</p>
+                    <p className="text-sm text-muted-foreground">{testimonial.location}</p>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -103,4 +119,3 @@ export default function TestimonialCarousel() {
     </div>
   )
 }
-

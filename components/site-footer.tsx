@@ -1,21 +1,19 @@
 import Link from "next/link"
-import { Facebook, Instagram, Twitter, Mail, Phone, MapPin, Leaf, Wrench } from "lucide-react"
+import Image from "next/image"
+import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
-export function SiteFooter() {
+export default function SiteFooter() {
   return (
     <footer className="bg-muted">
       <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <Link href="/" className="mb-4 flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary">
-                <div className="flex">
-                  <Leaf className="h-5 w-5 text-primary-foreground" />
-                  <Wrench className="h-5 w-5 text-primary-foreground" />
-                </div>
+              <div className="h-10 w-10 relative">
+                <Image src="/images/logo.png" alt="Seasonal Solutions Logo" fill className="object-contain" />
               </div>
               <span className="text-xl font-bold">Seasonal Solutions</span>
             </Link>
@@ -23,7 +21,12 @@ export function SiteFooter() {
               Your trusted handyman and landscaping experts in Winnipeg, providing quality services for all seasons.
             </p>
             <div className="flex gap-4">
-              <Link href="#" className="text-muted-foreground hover:text-primary">
+              <Link
+                href="https://www.facebook.com/profile.php?id=61558667987871"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary"
+              >
                 <Facebook className="h-5 w-5" />
                 <span className="sr-only">Facebook</span>
               </Link>
@@ -83,8 +86,8 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <Link href="/service-areas" className="text-muted-foreground hover:text-primary">
-                  Areas We Serve
+                <Link href="/testimonials" className="text-muted-foreground hover:text-primary">
+                  Testimonials
                 </Link>
               </li>
               <li>
@@ -99,44 +102,13 @@ export function SiteFooter() {
               </li>
             </ul>
           </div>
-          
-          <div>
-            <h3 className="mb-4 text-lg font-semibold">Winnipeg Neighborhoods</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/service-areas#river-heights" className="text-muted-foreground hover:text-primary">
-                  River Heights
-                </Link>
-              </li>
-              <li>
-                <Link href="/service-areas#st-vital" className="text-muted-foreground hover:text-primary">
-                  St. Vital
-                </Link>
-              </li>
-              <li>
-                <Link href="/service-areas#transcona" className="text-muted-foreground hover:text-primary">
-                  Transcona
-                </Link>
-              </li>
-              <li>
-                <Link href="/service-areas#st-james" className="text-muted-foreground hover:text-primary">
-                  St. James
-                </Link>
-              </li>
-              <li>
-                <Link href="/service-areas" className="text-muted-foreground hover:text-primary">
-                  View All Areas
-                </Link>
-              </li>
-            </ul>
-          </div>
 
           <div>
             <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
                 <MapPin className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
-                <span className="text-muted-foreground">Serving Winnipeg, MB and surrounding areas</span>
+                <span className="text-muted-foreground">123 Main Street, Winnipeg, MB R3C 1A1</span>
               </li>
               <li className="flex items-start gap-2">
                 <Phone className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
@@ -179,4 +151,3 @@ export function SiteFooter() {
     </footer>
   )
 }
-

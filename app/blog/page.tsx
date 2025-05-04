@@ -1,10 +1,10 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Calendar, User, ArrowRight, Tag } from "lucide-react"
-
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
+import { getUnsplashImage, imageCategories } from "@/lib/unsplash"
 
 export const metadata = {
   title: "Blog | Seasonal Solutions - Handyman & Landscaping in Winnipeg",
@@ -20,9 +20,9 @@ export default function BlogPage() {
       excerpt:
         "Maximize your outdoor space with these creative landscaping ideas perfect for the typical Winnipeg yard size.",
       date: "March 15, 2023",
-      author: "Sarah Johnson",
+      author: "Cole Doerksen",
       category: "Landscaping",
-      image: "/placeholder.svg?height=400&width=600",
+      image: getUnsplashImage(imageCategories.blog_landscaping_small_yard, 600, 400),
       slug: "landscaping-ideas-small-yards",
     },
     {
@@ -31,9 +31,9 @@ export default function BlogPage() {
       excerpt:
         "Essential maintenance tasks to protect your home from harsh Manitoba winters and prevent costly damage.",
       date: "September 20, 2023",
-      author: "John Smith",
+      author: "Cole Doerksen",
       category: "Seasonal Maintenance",
-      image: "/placeholder.svg?height=400&width=600",
+      image: getUnsplashImage(imageCategories.blog_winter_prep, 600, 400),
       slug: "preparing-home-winnipeg-winters",
     },
     {
@@ -44,7 +44,7 @@ export default function BlogPage() {
       date: "July 8, 2023",
       author: "Mike Williams",
       category: "Renovation",
-      image: "/placeholder.svg?height=400&width=600",
+      image: getUnsplashImage(imageCategories.blog_kitchen_renovation, 600, 400),
       slug: "budget-kitchen-renovation-tips",
     },
     {
@@ -55,7 +55,7 @@ export default function BlogPage() {
       date: "May 12, 2023",
       author: "Sarah Johnson",
       category: "Painting",
-      image: "/placeholder.svg?height=400&width=600",
+      image: getUnsplashImage(imageCategories.blog_paint_selection, 600, 400),
       slug: "paint-selection-manitoba-climate",
     },
     {
@@ -64,9 +64,9 @@ export default function BlogPage() {
       excerpt:
         "Simple repairs you can handle yourself, and when it's time to call in the professionals for more complex issues.",
       date: "April 3, 2023",
-      author: "John Smith",
+      author: "Cole Doerksen",
       category: "Handyman",
-      image: "/placeholder.svg?height=400&width=600",
+      image: getUnsplashImage(imageCategories.blog_diy_repairs, 600, 400),
       slug: "diy-home-repairs-guide",
     },
     {
@@ -77,7 +77,7 @@ export default function BlogPage() {
       date: "June 25, 2023",
       author: "Sarah Johnson",
       category: "Landscaping",
-      image: "/placeholder.svg?height=400&width=600",
+      image: getUnsplashImage(imageCategories.blog_native_plants, 600, 400),
       slug: "native-plants-winnipeg-gardens",
     },
   ]
@@ -191,7 +191,7 @@ export default function BlogPage() {
                   <h3 className="mb-4 text-lg font-bold">Featured Post</h3>
                   <div className="mb-3 aspect-video overflow-hidden rounded-md">
                     <Image
-                      src="/placeholder.svg?height=400&width=600"
+                      src={getUnsplashImage(imageCategories.blog_featured, 600, 400) || "/placeholder.svg"}
                       alt="Featured Post"
                       width={600}
                       height={400}
@@ -236,4 +236,3 @@ export default function BlogPage() {
     </div>
   )
 }
-
