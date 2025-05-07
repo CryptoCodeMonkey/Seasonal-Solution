@@ -3,14 +3,14 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
 // Log when this file is processed during build
-console.log("[BUILD] Processing gallery/[id]/page.tsx")
+// console.log("[BUILD] Processing gallery/[id]/page.tsx")
 
 export function generateMetadata({ params }: { params: { id: string } }) {
-  console.log("[METADATA] Generating metadata for project ID:", params.id)
+  // console.log("[METADATA] Generating metadata for project ID:", params.id)
 
   try {
     const projectId = Number.parseInt(params.id, 10) || 1
-    console.log("[METADATA] Parsed project ID:", projectId)
+    // console.log("[METADATA] Parsed project ID:", projectId)
 
     const projects = [
       { id: 1, title: "Basement Framing Project" },
@@ -21,14 +21,14 @@ export function generateMetadata({ params }: { params: { id: string } }) {
     ]
 
     const project = projects.find((p) => p.id === projectId) || projects[0]
-    console.log("[METADATA] Found project:", project.title)
+    // console.log("[METADATA] Found project:", project.title)
 
     return {
       title: `${project.title} | Seasonal Solutions`,
       description: `Details about our ${project.title} project.`,
     }
   } catch (error) {
-    console.error("[ERROR] Failed to generate metadata:", error)
+    // console.error("[ERROR] Failed to generate metadata:", error)
     return {
       title: "Project Details | Seasonal Solutions",
       description: "View details about our projects.",
@@ -37,11 +37,11 @@ export function generateMetadata({ params }: { params: { id: string } }) {
 }
 
 export default function ProjectDetailPage({ params }: { params: { id: string } }) {
-  console.log("[RENDER] Starting ProjectDetailPage render for ID:", params.id)
+  // console.log("[RENDER] Starting ProjectDetailPage render for ID:", params.id)
 
   try {
     const projectId = Number.parseInt(params.id, 10) || 1
-    console.log("[RENDER] Parsed project ID:", projectId)
+    // console.log("[RENDER] Parsed project ID:", projectId)
 
     // Simple project data
     const projects = [
@@ -85,10 +85,10 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
       },
     ]
 
-    console.log("[DATA] Projects loaded:", projects.length)
+    // console.log("[DATA] Projects loaded:", projects.length)
 
     const project = projects.find((p) => p.id === projectId) || projects[0]
-    console.log("[DATA] Selected project:", project.title)
+    // console.log("[DATA] Selected project:", project.title)
 
     return (
       <div className="container mx-auto px-4 py-12">
@@ -100,13 +100,7 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
 
         <div className="grid gap-8 md:grid-cols-2">
           <div className="relative h-[300px] overflow-hidden rounded-lg">
-            <Image
-              src={project.image || "/placeholder.svg"}
-              alt={project.title}
-              fill
-              className="object-cover"
-              onError={() => console.error(`[ERROR] Failed to load image for project ${project.id}`)}
-            />
+            <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
           </div>
 
           <div>
@@ -122,7 +116,7 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
       </div>
     )
   } catch (error) {
-    console.error("[ERROR] Failed to render ProjectDetailPage:", error)
+    // console.error("[ERROR] Failed to render ProjectDetailPage:", error)
     return (
       <div className="container mx-auto px-4 py-12">
         <div className="mb-6">

@@ -13,8 +13,6 @@ export const metadata = {
 console.log("[BUILD] Processing gallery/page.tsx")
 
 export default function GalleryPage() {
-  console.log("[RENDER] Starting GalleryPage render")
-
   const projects = [
     {
       id: 1,
@@ -53,54 +51,32 @@ export default function GalleryPage() {
     },
   ]
 
-  console.log("[DATA] Projects loaded:", projects.length)
+  return (
+    <div className="container mx-auto px-4 py-12">
+      <h1 className="mb-8 text-3xl font-bold">Our Work</h1>
 
-  try {
-    return (
-      <div className="container mx-auto px-4 py-12">
-        <h1 className="mb-8 text-3xl font-bold">Our Work</h1>
+      <p className="mb-8 text-muted-foreground">
+        Browse our portfolio of completed projects and get inspired for your own home improvement journey.
+      </p>
 
-        <p className="mb-8 text-muted-foreground">
-          Browse our portfolio of completed projects and get inspired for your own home improvement journey.
-        </p>
-
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => {
-            console.log(`[RENDER] Rendering project ${project.id}: ${project.title}`)
-
-            try {
-              return (
-                <Card key={project.id} className="overflow-hidden">
-                  <div className="relative h-48 w-full">
-                    <Image
-                      src={project.image || "/placeholder.svg"}
-                      alt={project.title}
-                      fill
-                      className="object-cover"
-                      onError={() => console.error(`[ERROR] Failed to load image for project ${project.id}`)}
-                    />
-                  </div>
-                  <CardContent className="p-4">
-                    <h3 className="mb-2 text-xl font-bold">{project.title}</h3>
-                    <p className="text-muted-foreground">{project.description}</p>
-                  </CardContent>
-                  <CardFooter className="border-t p-4">
-                    <Button asChild variant="outline" className="w-full">
-                      <Link href={`/gallery/${project.id}`}>View Details</Link>
-                    </Button>
-                  </CardFooter>
-                </Card>
-              )
-            } catch (error) {
-              console.error(`[ERROR] Failed to render project ${project.id}:`, error)
-              return null
-            }
-          })}
-        </div>
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {projects.map((project) => (
+          <Card key={project.id} className="overflow-hidden">
+            <div className="relative h-48 w-full">
+              <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
+            </div>
+            <CardContent className="p-4">
+              <h3 className="mb-2 text-xl font-bold">{project.title}</h3>
+              <p className="text-muted-foreground">{project.description}</p>
+            </CardContent>
+            <CardFooter className="border-t p-4">
+              <Button asChild variant="outline" className="w-full">
+                <Link href={`/gallery/${project.id}`}>View Details</Link>
+              </Button>
+            </CardFooter>
+          </Card>
+        ))}
       </div>
-    )
-  } catch (error) {
-    console.error("[ERROR] Failed to render GalleryPage:", error)
-    return <div>Something went wrong. Please try again later.</div>
-  }
+    </div>
+  )
 }
