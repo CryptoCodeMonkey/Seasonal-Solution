@@ -154,17 +154,15 @@ export default function GalleryPage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative">
+      <section className="bg-muted">
         <div
-          className="h-[400px] md:h-[500px] w-full bg-cover bg-center brightness-[0.7]"
+          className="relative w-full h-[400px] md:h-[500px] bg-cover bg-center"
           style={{
             backgroundImage: `url(${getUnsplashImage("renovation,quality,work", 1920, 600)})`,
           }}
-          role="img"
-          aria-label="Seasonal Solutions Quality Work"
-        />
-        <div className="absolute inset-0 flex items-center">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        >
+          <div className="absolute inset-0 bg-black/30"></div>
+          <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
             <div className="max-w-3xl">
               <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">Our Work</h1>
               <p className="mb-8 text-xl text-white/90">
@@ -214,7 +212,7 @@ export default function GalleryPage() {
                         <div
                           className="h-[200px] w-full bg-cover bg-center transition-transform duration-300 hover:scale-105"
                           style={{
-                            backgroundImage: `url(${project.image})`,
+                            backgroundImage: `url(${project.image || getUnsplashImage("renovation", 800, 600)})`,
                           }}
                           role="img"
                           aria-label={project.title}
@@ -224,15 +222,17 @@ export default function GalleryPage() {
                             <Badge variant="outline" className="capitalize">
                               {project.category}
                             </Badge>
-                            <span className="text-xs text-muted-foreground">{project.completionDate}</span>
+                            <span className="text-xs text-muted-foreground">
+                              {project.completionDate || "Completed"}
+                            </span>
                           </div>
 
                           <h3 className="mb-2 text-xl font-bold">{project.title}</h3>
-                          <p className="mb-2 text-sm text-primary">{project.location}</p>
-                          <p className="mb-4 text-muted-foreground">{project.description}</p>
+                          <p className="mb-2 text-sm text-primary">{project.location || "Winnipeg"}</p>
+                          <p className="mb-4 text-muted-foreground">{project.description || ""}</p>
 
                           <div className="space-y-1">
-                            {project.features.slice(0, 3).map((feature, index) => (
+                            {(project.features || []).slice(0, 3).map((feature, index) => (
                               <div key={index} className="flex items-start gap-2">
                                 <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
                                 <span className="text-sm">{feature}</span>
@@ -293,13 +293,13 @@ export default function GalleryPage() {
       {/* CTA Section */}
       <section className="relative py-16 lg:py-24">
         <div
-          className="absolute inset-0 bg-cover bg-center brightness-[0.4]"
+          className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: `url(${getUnsplashImage("landscaping,garden,beautiful", 1920, 800)})`,
           }}
-          role="img"
-          aria-label="Start your project with Seasonal Solutions"
-        />
+        >
+          <div className="absolute inset-0 bg-black/60"></div>
+        </div>
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-6 text-3xl font-bold tracking-tight text-white sm:text-4xl">

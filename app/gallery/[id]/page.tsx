@@ -277,7 +277,7 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
                 <div
                   className="h-[400px] w-full bg-cover bg-center"
                   style={{
-                    backgroundImage: `url(${project.image})`,
+                    backgroundImage: `url(${project.image || getUnsplashImage("renovation", 800, 600)})`,
                   }}
                   role="img"
                   aria-label={project.title}
@@ -285,12 +285,12 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
               </div>
 
               <div className="grid grid-cols-2 gap-4">
-                {project.additionalImages?.map((img, index) => (
+                {(project.additionalImages || []).map((img, index) => (
                   <div key={index} className="overflow-hidden rounded-lg">
                     <div
                       className="h-[200px] w-full bg-cover bg-center"
                       style={{
-                        backgroundImage: `url(${img})`,
+                        backgroundImage: `url(${img || getUnsplashImage("renovation", 800, 600)})`,
                       }}
                       role="img"
                       aria-label={`${project.title} - Additional view ${index + 1}`}
