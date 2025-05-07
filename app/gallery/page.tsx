@@ -155,14 +155,15 @@ export default function GalleryPage() {
     <div className="flex flex-col">
       {/* Hero Section */}
       <section className="bg-muted">
-        <div
-          className="relative w-full h-[400px] md:h-[500px] bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${getUnsplashImage("renovation,quality,work", 1920, 600)})`,
-          }}
-        >
+        <div className="w-full h-[400px] md:h-[500px] relative">
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: `url(${getUnsplashImage("renovation,quality,work", 1920, 600) || "/placeholder.svg"})`,
+            }}
+          ></div>
           <div className="absolute inset-0 bg-black/30"></div>
-          <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+          <div className="container relative h-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
             <div className="max-w-3xl">
               <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">Our Work</h1>
               <p className="mb-8 text-xl text-white/90">
@@ -291,16 +292,17 @@ export default function GalleryPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-16 lg:py-24">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${getUnsplashImage("landscaping,garden,beautiful", 1920, 800)})`,
-          }}
-        >
+      <section className="py-16 lg:py-24 relative">
+        <div className="absolute inset-0">
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: `url(${getUnsplashImage("landscaping,garden,beautiful", 1920, 800) || "/placeholder.svg"})`,
+            }}
+          ></div>
           <div className="absolute inset-0 bg-black/60"></div>
         </div>
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-6 text-3xl font-bold tracking-tight text-white sm:text-4xl">
               Ready to Start Your Project?

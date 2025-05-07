@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { getUnsplashImage } from "@/lib/unsplash"
 
 export async function generateMetadata({ params }: { params: { id: string } }) {
-  const projectId = Number.parseInt(params.id)
+  const projectId = Number.parseInt(params.id, 10) || 1
 
   // This is a simplified version - in a real app, you'd fetch this from a database
   const projects = [
@@ -92,7 +92,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 }
 
 export default function ProjectDetailPage({ params }: { params: { id: string } }) {
-  const projectId = Number.parseInt(params.id)
+  const projectId = Number.parseInt(params.id, 10) || 1
 
   // In a real application, you would fetch this data from a database or API
   // This is a simplified version for demonstration purposes
@@ -250,7 +250,22 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
   ]
 
   // Find the project or use a default if not found
-  const project = projects.find((p) => p.id === projectId) || projects[0]
+  const project = projects.find((p) => p.id === projectId) || {
+    id: 1,
+    title: "Project Not Found",
+    category: "other",
+    location: "Winnipeg",
+    description: "Project details not available.",
+    longDescription: "We couldn't find the project you're looking for. Please check our other projects.",
+    features: ["Not available"],
+    completionDate: "N/A",
+    duration: "N/A",
+    image: "/placeholder.svg",
+    additionalImages: [],
+  }
+
+  const features = project.features || ["Not available"]
+  const additionalImages = project.additionalImages || []
 
   return (
     <div className="flex flex-col">
@@ -277,27 +292,29 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
                 <div
                   className="h-[400px] w-full bg-cover bg-center"
                   style={{
-                    backgroundImage: `url(${project.image || getUnsplashImage("renovation", 800, 600)})`,
+                    backgroundImage: `url(${project.image || "/placeholder.svg"})`,
                   }}
                   role="img"
                   aria-label={project.title}
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                {(project.additionalImages || []).map((img, index) => (
-                  <div key={index} className="overflow-hidden rounded-lg">
-                    <div
-                      className="h-[200px] w-full bg-cover bg-center"
-                      style={{
-                        backgroundImage: `url(${img || getUnsplashImage("renovation", 800, 600)})`,
-                      }}
-                      role="img"
-                      aria-label={`${project.title} - Additional view ${index + 1}`}
-                    />
-                  </div>
-                ))}
-              </div>
+              {additionalImages.length > 0 && (
+                <div className="grid grid-cols-2 gap-4">
+                  {additionalImages.map((img, index) => (
+                    <div key={index} className="overflow-hidden rounded-lg">
+                      <div
+                        className="h-[200px] w-full bg-cover bg-center"
+                        style={{
+                          backgroundImage: `url(${img || "/placeholder.svg"})`,
+                        }}
+                        role="img"
+                        aria-label={`${project.title} - Additional view ${index + 1}`}
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
             <div>
@@ -320,13 +337,13 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
 
               <div className="mb-8 space-y-4">
                 <p className="text-lg font-medium">{project.description}</p>
-                <p className="text-muted-foreground">{project.longDescription}</p>
+                {project.longDescription && <p className="text-muted-foreground">{project.longDescription}</p>}
               </div>
 
               <div className="mb-8">
                 <h2 className="mb-4 text-xl font-bold">Project Features</h2>
                 <div className="grid gap-3 sm:grid-cols-2">
-                  {project.features.map((feature, index) => (
+                  {features.map((feature, index) => (
                     <div key={index} className="flex items-start gap-2">
                       <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
                       <span>{feature}</span>
