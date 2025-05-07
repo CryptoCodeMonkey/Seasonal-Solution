@@ -11,7 +11,8 @@ const TestimonialSection = dynamic(() => import("@/components/testimonial-sectio
 const CtaSection = dynamic(() => import("@/components/cta-section"))
 const ServiceAreas = dynamic(() => import("@/components/service-areas"))
 
-export const dynamicParams = "force-dynamic"
+// Fix: Change from string to boolean
+export const dynamicParams = true
 
 export default function Home() {
   // Get a hero image
