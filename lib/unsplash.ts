@@ -27,7 +27,7 @@ export function getUnsplashImage(category: string, width = 800, height = 600): s
     winter: "https://images.unsplash.com/photo-1612119276551-be9efb8e50a3?auto=format&fit=crop&w=800&q=80",
 
     // Team images
-    team: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80",
+    team: "/images/cole-head-photo.png",
     contractor1: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
     contractor2: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=400&q=80",
     contractor3: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=400&q=80",
@@ -55,7 +55,7 @@ export function getUnsplashImage(category: string, width = 800, height = 600): s
 
     // CTA and other sections
     cta: "https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1920&q=80",
-    about: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80",
+    about: "/images/cole-head-photo.png",
     quality: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80",
     winnipeg: "https://images.unsplash.com/photo-1609267281640-1feeee371a27?auto=format&fit=crop&w=1920&q=80",
 
