@@ -16,7 +16,9 @@ export const metadata: Metadata = {
   keywords:
     "handyman winnipeg, landscaping winnipeg, home repairs, lawn care, renovation, painting, seasonal maintenance, property maintenance",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.svg",
+    apple: "/favicon.svg",
+    shortcut: "/favicon.svg",
   },
     generator: 'v0.dev'
 }

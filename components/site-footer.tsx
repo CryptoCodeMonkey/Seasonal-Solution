@@ -116,7 +116,7 @@ export default function SiteFooter() {
               </li>
               <li className="flex items-start gap-2">
                 <Mail className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
-                <span className="text-muted-foreground">seasonalsolutionswinnipeg@gmail.com</span>
+                <span className="text-muted-foreground">coled204@hotmail.com</span>
               </li>
             </ul>
 

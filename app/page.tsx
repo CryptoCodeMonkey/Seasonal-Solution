@@ -64,9 +64,9 @@ export default function Home() {
               <Phone className="h-5 w-5" />
               <span>(204) 990-3247</span>
             </Link>
-            <Link href="mailto:seasonalsolutionswinnipeg@gmail.com" className="flex items-center gap-2 hover:underline">
+            <Link href="mailto:coled204@hotmail.com" className="flex items-center gap-2 hover:underline">
               <Mail className="h-5 w-5" />
-              <span>seasonalsolutionswinnipeg@gmail.com</span>
+              <span>coled204@hotmail.com</span>
             </Link>
           </div>
         </div>

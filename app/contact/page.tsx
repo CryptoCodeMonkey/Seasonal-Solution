@@ -212,10 +212,10 @@ export default function ContactPage() {
                       <div>
                         <p className="font-medium">Email</p>
                         <Link
-                          href="mailto:seasonalsolutionswinnipeg@gmail.com"
+                          href="mailto:coled204@hotmail.com"
                           className="text-muted-foreground hover:text-primary"
                         >
-                          seasonalsolutionswinnipeg@gmail.com
+                          coled204@hotmail.com
                         </Link>
                       </div>
                     </li>

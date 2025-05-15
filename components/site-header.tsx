@@ -113,12 +113,12 @@ export default function SiteHeader() {
                   <span>(204) 990-3247</span>
                 </Link>
                 <Link
-                  href="mailto:seasonalsolutionswinnipeg@gmail.com"
+                  href="mailto:coled204@hotmail.com"
                   className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <Mail className="h-4 w-4" />
-                  <span>seasonalsolutionswinnipeg@gmail.com</span>
+                  <span>coled204@hotmail.com</span>
                 </Link>
                 <Link
                   href="https://www.facebook.com/profile.php?id=61558667987871"
