@@ -36,26 +36,7 @@ export default function AboutPage() {
     },
   ]
 
-  const team = [
-    {
-      name: "Cole Doerksen",
-      role: "Founder & Lead Contractor",
-      image: getUnsplashImage("contractor1"),
-      bio: "With years of experience in construction and landscaping, Cole founded Seasonal Solutions to provide quality services to homeowners in Winnipeg.",
-    },
-    {
-      name: "Sarah Johnson",
-      role: "Landscape Designer",
-      image: getUnsplashImage("contractor2"),
-      bio: "Sarah brings creativity and expertise to our landscaping projects, with a degree in Landscape Architecture and a passion for sustainable design.",
-    },
-    {
-      name: "Mike Williams",
-      role: "Master Carpenter",
-      image: getUnsplashImage("contractor3"),
-      bio: "Mike's attention to detail and craftsmanship ensure that all of our carpentry and renovation projects are completed to the highest standards.",
-    },
-  ]
+
 
   return (
     <div className="flex flex-col">
@@ -145,40 +126,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Team */}
-      <section className="py-12 md:py-16 lg:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">Meet Our Team</h2>
-            <p className="mx-auto max-w-2xl text-muted-foreground">
-              Our experienced professionals are dedicated to delivering exceptional service and quality workmanship.
-            </p>
-          </div>
 
-          <div className="grid gap-8 md:grid-cols-3">
-            {team.map((member, index) => (
-              <Card key={index}>
-                <CardContent className="p-6">
-                  <div className="mb-4 aspect-square overflow-hidden rounded-full">
-                    <Image
-                      src={member.image || "/placeholder.svg"}
-                      alt={member.name}
-                      width={300}
-                      height={300}
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
-                  <div className="text-center">
-                    <h3 className="mb-1 text-xl font-bold">{member.name}</h3>
-                    <p className="mb-4 text-sm text-primary">{member.role}</p>
-                    <p className="text-muted-foreground">{member.bio}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Why Choose Us */}
       <section className="bg-muted py-12 md:py-16 lg:py-20">
